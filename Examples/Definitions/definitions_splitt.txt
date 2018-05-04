@@ -1,0 +1,132 @@
+* Definition file for TimEx - MITLL generic cell library with 250 uA JJ JTLs
+* Author:   CJ Fourie
+* Last mod: 4 May 2018 by Lieze Schindler
+$Parameters
+SourceType      = current
+*SourceAmplitude = 600E-6
+*SourceRiseTime  = 10E-12
+*SourceFallTime  = 10E-12
+SourceAmplitude = 1000E-6
+SourceRiseTime  = 1E-12
+SourceFallTime  = 1E-12
+TimeFirstStable = 20E-12
+WaitForStateChange = 40E-12
+VerilogStableTime = 10E-12
+VerilogWaitTime = 10E-12
+SlidingIntegratorLength = 17.5E-12
+PulseDetectThreshold = 0.5
+CTDependencyThreshold = 0.1E-12
+PulseFluxonFraction = 0.5
+MaxDelayChange = 0.75E-12
+MaxSelfDelayChange = 1.0E-12
+MinSameInputSeparation = 5.0E-12
+InputChainDelay = 7.5E-12
+IOFullFluxon = FALSE              // I/O's are PTL; pulses not full fluxons
+$End
+
+$DefaultLoadIn
+.SUBCKT defloadin 2 5 
+Tload 2 0 5 0 LOSSLESS Z0=5 TD=10p
+.ends defloadin
+$End
+
+$DefaultLoadOut
+.SUBCKT defloadout 2 5 
+Tload 2 0 5 0 LOSSLESS Z0=5 TD=50p
+.ends defloadout
+$End
+
+$DefaultSink
+.SUBCKT defsink 5
+ROX1 13 0 2
+ROX2 36 0  2
+B01_rx2    4          6          jjmitll100 area=1.00704
+B01_tx1    9          14         jjmitll100 area=1.69932
+B01_tx2    33         37         jjmitll100 area=1.69932
+B1         19         20         jjmitll100 area=1.69597
+B2         21         22         jjmitll100 area=1.20951
+B3         23         24         jjmitll100 area=1.20951
+IB01_rx2   0          7          pwl(0      0 5p 0.000134948)
+IB01_tx1   0          16         pwl(0      0 5p 7.6267e-005)
+IB01_tx2   0          39         pwl(0      0 5p 7.6267e-005)
+IB1        0          31         pwl(0      0 5p 0.000359683)
+L01_rx2    5          4          2.6757e-013
+L02_tx1    9          12         9.42532e-012
+L02_tx2    33         35         9.42532e-012
+L1         4          19         1.52585e-012     
+L2         19         25         2.91538e-012     
+L3         25         26         4.81369e-013     
+L4         26         21         1.27164e-012     
+L5         21         9          3.25722e-012     
+L6         26         23         1.27164e-012     
+L7         23         33         3.25722e-012     
+LP01_rx2   0          6          3.4e-013
+LP01_tx1   0          14         5e-014
+LP01_tx2   0          37         5e-014
+Lp1        20         0          2e-013    
+Lp2        22         0          2e-013    
+Lp3        24         0          2e-013    
+LP_IB1     25         31         2e-013 
+LPR01_rx2  4          7          2e-013
+LPR01_tx1  9          16         2e-013
+LPR01_tx2  33         39         2e-013
+LRB01_rx2  0          8          5e-013
+LRB01_tx1  0          15         1e-012
+LRB01_tx2  0          38         1e-012
+LRB1       28         0          1e-012   
+LRB2       30         0          1e-012   
+LRB3       29         0          1e-012   
+RB01_rx2   8          4          6.81198
+RB01_tx1   15         9          4.03684
+RB01_tx2   38         33         4.03684
+RB1        19         28         4.04483    
+RB2        21         30         5.67164    
+RB3        23         29         5.67164    
+RINS_tx1   12         13         1.36      
+RINS_tx2   35         36         1.36                 
+.model jmitll jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.ends defsink
+$End
+
+$DefaultSource
+.SUBCKT gensource 8 22 
+* DC-SFQ
+B1    1  2  jjmitll100 area=2.25 
+B2    3  4  jjmitll100 area=2.25 
+B3    5  6  jjmitll100 area=2.5 
+IB1   0  2  pwl(0 0 5p 275uA)
+IB2   0  5  pwl(0 0 5p 175uA)
+L1    8  7  1p  
+L2    7  0  3.9p  
+L3    7  1  0.6p  
+L4    2  3  1.1p  
+L5    3  5  4.5p  
+L6    5  11 2p  
+Lp2   4  0  0.2p  
+Lp3   6  0  0.2p  
+LRB1  9  2  1p  
+LRB2  10 4  1p  
+LRB3  12 6  1p  
+RB1   1  9  4.31  
+RB2   3  10 4.31  
+RB3   5  12 3.88  
+* PTL-TX
+B01   23 27 jjmitll100 area=2
+B02   24 26 jjmitll100 area=1.62
+IB01  0  30 pwl(0      0 5p 0.00023)
+IB02  0  31 pwl(0      0 5p 8.2e-005)
+L01   11 23 2.5e-012  
+L02   23 24 3.3e-012  
+L03   24 25 3.5e-013  
+LP01  0  27 5e-014    
+LP02  0  26 1.2e-013  
+LPR01 23 30 2e-013    
+LPR02 24 31 1.3e-012  
+LRB01 27 28 1e-012    
+LRB02 26 29 1e-012    
+RB01  28 23 4.85      
+RB02  29 24 6.3       
+RINS  25 22 1.36      
+.model jjmitll100 jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.ends gensource
+$End
