@@ -1,4 +1,4 @@
-*****  xic.exe 4.3.4 Win32 i386 05/14/2018 11:42 GMT
+*****  xic.exe 4.3.5 Win32 i386 07/30/2018 06:46 GMT
 
 .model jmitll jj
 + rtype     = 1             vg        = 2.8mV         cap       = 0.07pF        
