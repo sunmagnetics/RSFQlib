@@ -1,5 +1,5 @@
 # RSFQlib
-RSFQ cell library
+RSFQ cell library V1.02
 
 This cell library was developed under the IARPA SuperTools/ColdFlux contract via the U.S. Army Research Office grant W911NF-17-1-0120. The aim was to create a generic RSFQ cell library which can be used by circuit designers. 
 The libraries were developed using open-source tools - WRspice and XIC. 
@@ -7,5 +7,3 @@ The RSFQ library is designed with integrated Passive Transmission Line (PTL) dri
 The RSFQ cell library consists of basic logic gates which, when connected, can be used to construct more complex functions. The following core cells form the generic RSFQ cell library: JTLT, SPLITT, MERGET, DFFT, AND2T, OR2T, NOTT, XORT and NDROT. The cells are currently optimized to run at a maximum of 50 GHz.
 
 Additional files for simulating the cells using jsim  and GSchem are also included in the library.
-
-Planned future improvements include the use of PCells within XIC. When PCells are used, the user can easily adapt the cell schematic without having to manually adjust the netlist file to incorporate the param function for various parameters.

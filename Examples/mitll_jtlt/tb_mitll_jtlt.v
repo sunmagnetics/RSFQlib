@@ -6,6 +6,7 @@
 // For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
+`include "mitll_jtlt.v"
 `timescale 1ps/100fs
 module tb_mitll_jtlt;
    reg in = 0;
@@ -16,6 +17,7 @@ module tb_mitll_jtlt;
          // Now in state 0
          #20 in = !in;
          // Now in state 0
+		 #20 in = !in;
       end
 
    initial
@@ -24,8 +26,8 @@ module tb_mitll_jtlt;
          $monitor("%d,\t%b,\t%b",$time,in,out);
       end
 
-   mitll_jtltopt DUT (in, out);
+   mitll_jtlt DUT (in, out);
 
    initial
-      #30 $finish;
+      #100 $finish;
 endmodule

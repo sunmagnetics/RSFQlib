@@ -6,6 +6,7 @@
 // For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
+`include "mitll_nott.v"
 `timescale 1ps/100fs
 module tb_test_nott;
    reg in = 0;
@@ -19,10 +20,11 @@ module tb_test_nott;
          // Now in state 1
          #10 in = !in;
          // Now in state 1
-         #10 clk = !clk;
+         #20 clk = !clk;
          // Now in state 0
-         #10 clk = !clk;
+         #20 clk = !clk;
          // Now in state 0
+		 #20 clk = !clk;
       end
 
    initial
@@ -34,5 +36,5 @@ module tb_test_nott;
    test_nott DUT (in, clk, out);
 
    initial
-      #60 $finish;
+      #200 $finish;
 endmodule

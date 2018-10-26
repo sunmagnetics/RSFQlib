@@ -2,6 +2,8 @@
 * Begin .SUBCKT model                    *
 * spice-sdb ver 4.28.2007                *
 *                                        *
+*		        Version: 1.1			 *
+*										 *
 * RSFQ generic cell for MITLL sfq5ee     *
 * Project under IARPA-BAA-16-03          *
 * Authored 1 March 2016, JA Delport, SU  *
@@ -10,31 +12,33 @@
 * Modified 23 Mar 2018, L Schindler, SU  *
 *	(Added PTL drivers & Receivers and   *
 *	  reduced JJ count)      			 *
-* Modified 30 April 2018, L Schindler, SU *
+* Modified 30 Apr 2018, L Schindler, SU  *
 *	(Optimized cell)					 *
-* Last mod 9 May 2018, L Schindler, SU   *
+* Modified 9 May 2018, L Schindler, SU   *
 *   (Fixed port connections)	         *
+* Last mod 26 Oct 2018, L Schindler, SU  *
+*   (Updated parameter values)	         *
 ******************************************
 *                 IN_A   IN_B   CLK   OUT
 *$Ports             in_A  in_B  in_clk  out_out
 .SUBCKT mitll_and2t 29 12 7 19
 *==============  Begin SPICE netlist of main design ============
-B01        36         40         jmitll     area=1.31899
-B01rx1    6          8          jmitll     area=0.901389
-B01rx2    11         13         jmitll     area=0.88063
-B01rx3    28         30         jmitll     area=0.88063
-B01tx1    16         20         jmitll     area=2.26625
-B02        63         67         jmitll     area=1.31899
-B03        37         48         jmitll     area=1.13403
-B04        68         64         jmitll     area=1.13403
-B05        49         50         jmitll     area=1.52701
-B06        50         69         jmitll     area=1.52701
-B07        51         52         jmitll     area=1.25725
-B08        43         47         jmitll     area=1.16701
-B09        54         55         jmitll     area=2.03545
-B10        34         39         jmitll     area=1.75934
-B11        61         66         jmitll     area=1.75934
-B14        41         46         jmitll     area=1.50181
+B01        36         40         jmitll     area=1.3190
+B01rx1    6          8          jmitll     area=0.9014
+B01rx2    11         13         jmitll     area=0.8806
+B01rx3    28         30         jmitll     area=0.8806
+B01tx1    16         20         jmitll     area=2.2663
+B02        63         67         jmitll     area=1.3190
+B03        37         48         jmitll     area=1.1340
+B04        68         64         jmitll     area=1.1340
+B05        49         50         jmitll     area=1.5270
+B06        50         69         jmitll     area=1.5270
+B07        51         52         jmitll     area=1.2573
+B08        43         47         jmitll     area=1.1670
+B09        54         55         jmitll     area=2.0355
+B10        34         39         jmitll     area=1.7593
+B11        61         66         jmitll     area=1.7593
+B14        41         46         jmitll     area=1.5018
 IB01       0          38         pwl(0      0 5p 0.000113269)
 IB01rx1   0          9          pwl(0      0 5p 0.00012754)
 IB01rx2   0          14         pwl(0      0 5p 0.000131447)
@@ -43,29 +47,29 @@ IB01tx1   0          22         pwl(0      0 5p 0.000213665)
 IB02       0          65         pwl(0      0 5p 0.000113269)
 IB03       0          56         pwl(0      0 5p 6.26758e-005)
 IB07       0          45         pwl(0      0 5p 0.000179299)
-L01        37         49         2.57965e-012
+L01        37         49         2.5797e-012
 L01rx1    7          6          1.7746e-012
-L01rx2    12         11         1.53695e-012
-L01rx3    29         28         1.53695e-012
-L01tx1    54         16         4.64399e-012
-L02        69         64         2.57965e-012
-L02tx1    16         18         2.74282e-012
-L03        34         35         1.93254e-012
-L04        61         62         1.93254e-012
-L05        44         48         1.14641e-012
-L06        68         44         1.14641e-012
-L07        42         43         1.99319e-012
+L01rx2    12         11         1.5370e-012
+L01rx3    29         28         1.5370e-012
+L01tx1    54         16         4.6440e-012
+L02        69         64         2.5797e-012
+L02tx1    16         18         2.7428e-012
+L03        34         35         1.9325e-012
+L04        61         62         1.9325e-012
+L05        44         48         1.1464e-012
+L06        68         44         1.1464e-012
+L07        42         43         1.9932e-012
 L08        51         53         3.9e-014  
-L09        53         54         2.92475e-012
+L09        53         54         2.9248e-012
 L13        28         34         2.2304e-012
 L14        11         61         2.2304e-012
 L15        35         36         6.1049e-012
 L16        62         63         6.1049e-012
-L17        6          41         1.94279e-012
-L19        41         42         2.03734e-013
+L17        6          41         1.9428e-012
+L19        41         42         2.0373e-013
 L20        50         51         3.9901e-013
-L21        36         37         1.29089e-013
-L22        63         64         1.29089e-013
+L21        36         37         1.2909e-013
+L22        63         64         1.2909e-013
 L23        43         44         1e-014    
 LP01       0          40         2.55e-013 
 LP01rx1   0          8          3.4e-013  

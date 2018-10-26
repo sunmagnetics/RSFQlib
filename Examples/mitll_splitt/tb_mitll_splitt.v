@@ -6,6 +6,7 @@
 // For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
+`include "mitll_splitt.v"
 `timescale 1ps/100fs
 module tb_mitll_splitt;
    reg in = 0;
@@ -16,6 +17,7 @@ module tb_mitll_splitt;
          // Now in state 0
          #20 in = !in;
          // Now in state 0
+		 #20 in = !in;
       end
 
    initial
@@ -24,8 +26,8 @@ module tb_mitll_splitt;
          $monitor("%d,\t%b,\t%b,\t%b",$time,in,out1,out2);
       end
 
-   mitll_splittopt DUT (in, out1, out2);
+   mitll_splitt DUT (in, out1, out2);
 
    initial
-      #30 $finish;
+      #50 $finish;
 endmodule

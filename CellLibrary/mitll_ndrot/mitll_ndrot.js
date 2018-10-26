@@ -2,6 +2,8 @@
 * Begin .SUBCKT model                    *
 * spice-sdb ver 4.28.2007                *
 *                                        *
+*		        Version: 1.1			 *
+*										 *
 * RSFQ generic cell for MITLL sfq5ee     *
 * Project under IARPA-BAA-16-03          *
 * Authored 1 March 2016, JA Delport, SU  *
@@ -10,31 +12,33 @@
 * Modified 23 Mar 2018, L Schindler, SU  *
 *	(Added PTL drivers & Receivers and   *
 *	  reduced JJ count)      			 *
-* Last mod 3 May 2018, L Schindler, SU *
+* Modified 3 May 2018, L Schindler, SU   *
 *	(Optimized cell)					 *
+* Last mod 26 Oct 2018, L Schindler, SU  *
+*   (Updated parameter values)	         *
 ******************************************
 *                   SET     RESET     CLK     OUT
 *$Ports             in_set  in_reset  in_clk  out_out
 .SUBCKT mitll_ndrot 51 66 43 61 
 *==============  Begin SPICE netlist of main design ============
-B01        5          33         jmitll     area=2.17884
-B01rx1     50         54         jmitll     area=0.859672
-B01rx2     65         69         jmitll     area=0.859672
-B01rx3     42         46         jmitll     area=0.989203
-B01tx1     58         62         jmitll     area=2.36135
-B02        16         17         jmitll     area=1.64984
-B02rx1     2          53         jmitll     area=1.00021
-B02rx2     4          68         jmitll     area=1.00021
-B02rx3     6          45         jmitll     area=0.94263
-B03        3          31         jmitll     area=2.34644
-B04        11         14         jmitll     area=1.95972
-B05        14         35         jmitll     area=2.83676
-B06        1          8          jmitll     area=1.90793
-B07        10         12         jmitll     area=1.77494
-B08        12         20         jmitll     area=1.16187
-B09        23         25         jmitll     area=0.778214
-B10        28         39         jmitll     area=1.63129
-B11        59         73         jmitll     area=1.50789
+B01        5          33         jmitll     area=2.1788
+B01rx1     50         54         jmitll     area=0.8597
+B01rx2     65         69         jmitll     area=0.8597
+B01rx3     42         46         jmitll     area=0.9892
+B01tx1     58         62         jmitll     area=2.3613
+B02        16         17         jmitll     area=1.6498
+B02rx1     2          53         jmitll     area=1.0002
+B02rx2     4          68         jmitll     area=1.0002
+B02rx3     6          45         jmitll     area=0.9426
+B03        3          31         jmitll     area=2.3464
+B04        11         14         jmitll     area=1.9597
+B05        14         35         jmitll     area=2.8368
+B06        1          8          jmitll     area=1.9079
+B07        10         12         jmitll     area=1.7749
+B08        12         20         jmitll     area=1.1619
+B09        23         25         jmitll     area=0.7782
+B10        28         39         jmitll     area=1.6313
+B11        59         73         jmitll     area=1.5079
 IB01       0          41         pwl(0      0 5p 0.000223851)
 IB01rx1    0          55         pwl(0      0 5p 0.000134142)
 IB01rx2    0          70         pwl(0      0 5p 0.000134142)
@@ -45,33 +49,33 @@ IB03       0          7          pwl(0      0 5p 0.000198086)
 IB04       0          24         pwl(0      0 5p 9.85166e-005)
 IB05       0          27         pwl(0      0 5p 9.47282e-005)
 IB06       0          29         pwl(0      0 5p 6.36747e-005)
-L01        6          5          7.58325e-012    
-L01rx1     51         50         1.91223e-012 
-L01rx2     66         65         1.91223e-012 
-L01rx3     43         42         1.78689e-012 
-L01tx1     59         58         3.54267e-012 
-L02        17         19         1.33814e-012    
-L02rx1     50         52         4.04813e-012 
-L02rx2     65         67         4.04813e-012 
-L02rx3     42         44         4.31353e-012 
-L02tx1     58         60         3.52699e-012 
-L03        4          3          4.38787e-012    
-L03rx1     52         2          3.60359e-012 
-L03rx2     67         4          3.60359e-012 
-L03rx3     44         6          3.92595e-012 
-L04        3          11         3.21697e-012    
-L05        2          1          7.21828e-012    
+L01        6          5          7.5833e-012    
+L01rx1     51         50         1.9122e-012 
+L01rx2     66         65         1.9122e-012 
+L01rx3     43         42         1.7869e-012 
+L01tx1     59         58         3.5427e-012 
+L02        17         19         1.3381e-012    
+L02rx1     50         52         4.0481e-012 
+L02rx2     65         67         4.0481e-012 
+L02rx3     42         44         4.3135e-012 
+L02tx1     58         60         3.5270e-012 
+L03        4          3          4.3879e-012    
+L03rx1     52         2          3.6036e-012 
+L03rx2     67         4          3.6036e-012 
+L03rx3     44         6          3.9260e-012 
+L04        3          11         3.2170e-012    
+L05        2          1          7.2183e-012    
 L06        1          10         3.0677e-012    
-L07        23         22         2.55963e-012    
-L08        14         23         3.24389e-012    
-L09        26         25         3.73817e-013    
-L10        19         26         5.29936e-013    
-L11        28         29         2.50877e-012    
-L13        19         28         9.51366e-013    
-L14        12         22         4.75276e-014    
-L15        5          40         1.28747e-012    
-L16        40         16         1.06777e-012    
-L17        29         59         1.27911e-012    
+L07        23         22         2.5596e-012    
+L08        14         23         3.2439e-012    
+L09        26         25         3.7382e-013    
+L10        19         26         5.2995e-013    
+L11        28         29         2.5089e-012    
+L13        19         28         9.5137e-013    
+L14        12         22         4.7528e-014    
+L15        5          40         1.2875e-012    
+L16        40         16         1.0678e-012    
+L17        29         59         1.2791e-012    
 LP01       0          33         1.56e-013   
 LP01rx1    0          54         3.4e-013
 LP01rx2    0          69         3.4e-013

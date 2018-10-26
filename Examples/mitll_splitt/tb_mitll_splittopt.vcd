@@ -1,0 +1,55 @@
+$date
+	Tue Oct 09 09:27:02 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100fs
+$end
+$scope module tb_mitll_splitt $end
+$var wire 1 ! out2 $end
+$var wire 1 " out1 $end
+$var reg 1 # in $end
+$scope module DUT $end
+$var wire 1 # in $end
+$var reg 1 $ errorsignal_in $end
+$var reg 1 " out1 $end
+$var reg 1 ! out2 $end
+$var integer 32 % cell_state [31:0] $end
+$var real 1 & ct_state0_in_in $end
+$var real 1 ' delay_state0_in_out1 $end
+$var real 1 ( delay_state0_in_out2 $end
+$var integer 32 ) outfile [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx )
+r5.5 (
+r5.5 '
+r5.2 &
+b0 %
+0$
+0#
+0"
+0!
+$end
+#200
+1$
+1#
+#252
+0$
+#255
+1!
+1"
+#400
+1$
+0#
+#452
+0$
+#455
+0!
+0"
+#500

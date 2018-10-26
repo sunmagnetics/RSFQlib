@@ -6,6 +6,7 @@
 // For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
+`include "mitll_ndrot.v"
 `timescale 1ps/100fs
 module tb_mitll_ndrot;
    reg set = 0;
@@ -13,10 +14,12 @@ module tb_mitll_ndrot;
    reg clk = 0;
    initial
       begin
-         $dumpfile("tb_mitll_ndrotopt.vcd");
+         $dumpfile("tb_mitll_ndrot.vcd");
          $dumpvars;
          // Now in state 0
          #20 set = !set;
+		 #10 clk = !clk;
+		 #20 clk = !clk;
          // Now in state 1
          #10 set = !set;
          // Now in state 1
@@ -34,8 +37,8 @@ module tb_mitll_ndrot;
          $monitor("%d,\t%b,\t%b,\t%b,\t%b",$time,set,reset,clk,out);
       end
 
-   mitll_ndrotopt DUT (set, reset, clk, out);
+   mitll_ndrot DUT (set, reset, clk, out);
 
    initial
-      #70 $finish;
+      #150 $finish;
 endmodule

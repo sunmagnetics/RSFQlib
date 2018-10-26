@@ -2,45 +2,49 @@
 * Begin .SUBCKT model                   *
 * spice-sdb ver 4.28.2007               *
 *                                       *
+*		        Version: 1.1			*
+*										*
 * RSFQ generic cell for MITLL sfq5ee    *
 * Project under IARPA-BAA-16-03         *
 * Authored 3 Nov 2015, CJ Fourie, SU    *
-* Last mod 23 Mar 2018, L Schindler, SU  *
-*	(Added PTL drivers & Receivers and   *
-*	  reduced JJ count)      			 *
-* Modified 23 Mar 2018, L Schindler, SU  *
-*	(Added PTL drivers & Receivers and   *
-*	  reduced JJ count)      			 *
-* Last mod 30 April 2018, L Schindler, SU *
-*	(Optimized cell)					 *
-******************************************
+* Last mod 23 Mar 2018, L Schindler, SU *
+*	(Added PTL drivers & Receivers and  *
+*	  reduced JJ count)      			*
+* Modified 23 Mar 2018, L Schindler, SU *
+*	(Added PTL drivers & Receivers and  *
+*	  reduced JJ count)      			*
+* Modified 30 Apr 2018, L Schindler, SU *
+*	(Optimized cell)					*
+* Last mod 26 Oct 2018, L Schindler, SU *
+*   (Updated parameter values)	        *
+*****************************************
 *                   IN_A  in_B  OUT
 *$Ports             in_A  in_B  out_out
 .SUBCKT mitll_merget 24 29 34 
 *==============  Begin SPICE netlist of main design ============
-B01_rx1    23         25         jmitll     area=0.406096932932737
-B01_rx2    28         30         jmitll     area=0.406096932932737
-B01_tx1    12         35         jmitll     area=1.6170270947092646
-B1         1          2          jmitll     area=1.3297290261410297
-B2         1          5          jmitll     area=0.9441504843661195
-B3         3          4          jmitll     area=1.3297290261410297
-B4         3          6          jmitll     area=0.9441504843661195
-B5         7          8          jmitll     area=0.4699573551784042
-IB01_rx1   0          26         pwl(0      0 5p 5.78131352e-05)
-IB01_rx2   0          31         pwl(0      0 5p 5.78131352e-05)
-IB01_tx1   0          37         pwl(0      0 5p 9.86576163e-05)
-IB1        0          10         pwl(0      0 5p 2.13019346e-04)
-L01_rx1    24         23         1.02289510e-13
-L01_rx2    29         28         1.02289510e-13
-L02_rx1    23         9          3.65207718e-13
-L02_rx2    28         11         3.65207718e-13
-L02_tx1    12         33         7.96831232e-13
-L1         9          1          1.98449952e-12  
-L2         5          10         4.25096018e-13 
-L3         11         3          1.98449952e-12
-L4         6          10         4.25096018e-13    
-L6         10         7          3.24979008e-12  
-L7         7          12         3.11367602e-12
+B01_rx1    23         25         jmitll     area=0.4061
+B01_rx2    28         30         jmitll     area=0.4061
+B01_tx1    12         35         jmitll     area=1.6170
+B1         1          2          jmitll     area=1.3297
+B2         1          5          jmitll     area=0.9442
+B3         3          4          jmitll     area=1.3297
+B4         3          6          jmitll     area=0.9442
+B5         7          8          jmitll     area=0.4700
+IB01_rx1   0          26         pwl(0      0 5p 5.7813e-05)
+IB01_rx2   0          31         pwl(0      0 5p 5.7813e-05)
+IB01_tx1   0          37         pwl(0      0 5p 9.8658e-05)
+IB1        0          10         pwl(0      0 5p 2.1302e-04)
+L01_rx1    24         23         1.0229e-13
+L01_rx2    29         28         1.0229e-13
+L02_rx1    23         9          3.6521e-13
+L02_rx2    28         11         3.6521e-13
+L02_tx1    12         33         7.9683e-13
+L1         9          1          1.9845e-12  
+L2         5          10         4.2510e-13 
+L3         11         3          1.9845e-12
+L4         6          10         4.2510e-13    
+L6         10         7          3.2498e-12  
+L7         7          12         3.1137e-12
 LP01_rx1   0          25         3.4e-013
 LP01_rx2   0          30         3.4e-013
 LP01_tx1   0          35         5e-014

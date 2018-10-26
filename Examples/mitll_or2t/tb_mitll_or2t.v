@@ -6,6 +6,7 @@
 // For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
+`include "mitll_or2t.v"
 `timescale 1ps/100fs
 module tb_mitll_or2t;
    reg a = 0;
@@ -13,10 +14,11 @@ module tb_mitll_or2t;
    reg clk = 0;
    initial
       begin
-         $dumpfile("tb_mitll_or2topt.vcd");
+         $dumpfile("tb_mitll_or2t.vcd");
          $dumpvars;
          // Now in state 0
          #20 a = !a;
+		 #10 clk = !clk;
          // Now in state 1
          #10 a = !a;
          // Now in state 1
@@ -34,7 +36,7 @@ module tb_mitll_or2t;
          $monitor("%d,\t%b,\t%b,\t%b,\t%b",$time,a,b,clk,out);
       end
 
-   mitll_or2topt DUT (a, b, clk, out);
+   mitll_or2t DUT (a, b, clk, out);
 
    initial
       #70 $finish;

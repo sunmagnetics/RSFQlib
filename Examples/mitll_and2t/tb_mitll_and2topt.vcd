@@ -1,0 +1,97 @@
+$date
+	Tue Oct 09 09:41:36 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100fs
+$end
+$scope module tb_mitll_and2t $end
+$var wire 1 ! out $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ clk $end
+$scope module DUT $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ clk $end
+$var reg 1 % errorsignal_a $end
+$var reg 1 & errorsignal_b $end
+$var reg 1 ' errorsignal_clk $end
+$var reg 1 ! out $end
+$var integer 32 ( cell_state [31:0] $end
+$var real 1 ) ct_state0_clk_a $end
+$var real 1 * ct_state0_clk_b $end
+$var real 1 + ct_state1_clk_a $end
+$var real 1 , ct_state1_clk_b $end
+$var real 1 - ct_state2_clk_a $end
+$var real 1 . ct_state2_clk_b $end
+$var real 1 / ct_state3_b_b $end
+$var real 1 0 ct_state3_clk_a $end
+$var real 1 1 ct_state3_clk_b $end
+$var real 1 2 delay_state3_clk_out $end
+$var integer 32 3 outfile [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx 3
+r8 2
+r1.7 1
+r3.3 0
+r24.5 /
+r2.9 .
+r2 -
+r2.7 ,
+r6.5 +
+r3 *
+r2.3 )
+b0 (
+0'
+0&
+0%
+0$
+0#
+0"
+0!
+$end
+#200
+b1 (
+1"
+#300
+1&
+1%
+b0 (
+1$
+#327
+0&
+#365
+0%
+#400
+b1 (
+0"
+#500
+b11 (
+1#
+#600
+1"
+#700
+1&
+0#
+#800
+1%
+b0 (
+0$
+#817
+0&
+#833
+0%
+#880
+1!
+#900
+b10 (
+1#
+#1000
+0"

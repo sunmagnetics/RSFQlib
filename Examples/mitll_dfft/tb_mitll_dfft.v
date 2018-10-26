@@ -6,13 +6,14 @@
 // For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
+`include "mitll_dfft.v"
 `timescale 1ps/100fs
 module tb_mitll_dfft;
    reg in = 0;
    reg clk = 0;
    initial
       begin
-         $dumpfile("tb_mitll_dfftopt.vcd");
+         $dumpfile("tb_mitll_dfft.vcd");
          $dumpvars;
          // Now in state 0
          #20 in = !in;
@@ -31,7 +32,7 @@ module tb_mitll_dfft;
          $monitor("%d,\t%b,\t%b,\t%b",$time,in,clk,out);
       end
 
-   mitll_dfftopt DUT (in, clk, out);
+   mitll_dfft DUT (in, clk, out);
 
    initial
       #60 $finish;

@@ -2,6 +2,8 @@
 * Begin .SUBCKT model                    *
 * spice-sdb ver 4.28.2007                *
 *                                        *
+*		        Version: 1.1			 *
+*										 *
 * RSFQ generic cell for MITLL sfq5ee     *
 * Project under IARPA-BAA-16-03          *
 * Authored 3 Nov 2015, CJ Fourie, SU     *
@@ -10,33 +12,35 @@
 * Modified 23 Mar 2018, L Schindler, SU  *
 *	(Added PTL drivers & Receivers and   *
 *	  reduced JJ count)      			 *
-* Last mod 30 April 2018, L Schindler, SU *
+* Modified 30 Apr 2018, L Schindler, SU  *
 *	(Optimized cell)					 *
+* Last mod 26 Oct 2018, L Schindler, SU  *
+*   (Updated parameter values)	         *
 ******************************************
 *                      in out1 out2
 *$Ports                in_in  out_out1  out_out2
 .SUBCKT MITLL_SPLITT 5 13 36 
 *==============  Begin SPICE netlist of main design ============
-B01_rx2    4          6          jjmitll100 area=1.00704
-B01_tx1    9          14         jjmitll100 area=1.69932
-B01_tx2    33         37         jjmitll100 area=1.69932
-B1         19         20         jjmitll100 area=1.69597
-B2         21         22         jjmitll100 area=1.20951
-B3         23         24         jjmitll100 area=1.20951
+B01_rx2    4          6          jjmitll100 area=1.0070
+B01_tx1    9          14         jjmitll100 area=1.6993
+B01_tx2    33         37         jjmitll100 area=1.6993
+B1         19         20         jjmitll100 area=1.6960
+B2         21         22         jjmitll100 area=1.2095
+B3         23         24         jjmitll100 area=1.2095
 IB01_rx2   0          7          pwl(0      0 5p 0.000134948)
 IB01_tx1   0          16         pwl(0      0 5p 7.6267e-005)
 IB01_tx2   0          39         pwl(0      0 5p 7.6267e-005)
 IB1        0          31         pwl(0      0 5p 0.000359683)
 L01_rx2    5          4          2.6757e-013
-L02_tx1    9          12         9.42532e-012
-L02_tx2    33         35         9.42532e-012
-L1         4          19         1.52585e-012     
-L2         19         25         2.91538e-012     
-L3         25         26         4.81369e-013     
-L4         26         21         1.27164e-012     
-L5         21         9          3.25722e-012     
-L6         26         23         1.27164e-012     
-L7         23         33         3.25722e-012     
+L02_tx1    9          12         2.2253e-012
+L02_tx2    33         35         2.2253e-012
+L1         4          19         1.5259e-012     
+L2         19         25         2.9154e-012     
+L3         25         26         4.8137e-013     
+L4         26         21         1.2716e-012     
+L5         21         9          1.2572e-012     
+L6         26         23         1.2716e-012     
+L7         23         33         1.2572e-012     
 LP01_rx2   0          6          3.4e-013
 LP01_tx1   0          14         5e-014
 LP01_tx2   0          37         5e-014
