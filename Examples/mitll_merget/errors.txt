@@ -1,2 +1,0 @@
-Violation of critical timing in module tb_mitll_merget.DUT; 24 ps.
-

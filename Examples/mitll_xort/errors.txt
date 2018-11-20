@@ -1,2 +1,0 @@
-Violation of critical timing in module tb_mitll_xort.DUT; 40 ps.
-

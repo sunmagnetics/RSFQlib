@@ -4,12 +4,13 @@
 *                                        *
 *		        Version: 1.1			 *
 *										 *
-* Last mod 26 Oct 2018, L Schindler, SU  *
+* Modified 26 Oct 2018, L Schindler, SU  *
 *   (Updated parameter values)	         *
+* Last mod 20 Nov 2018, L Schindler, SU  *
 ******************************************
 *                 IN   OUT
 *$Ports          in_in out_out
-.SUBCKT mitll_and2t 2 37
+.SUBCKT mitll_sfqdc 2 37
 *********************************************************
 *==============  Begin SPICE netlist of main design ============
 B01        1          12         jmitll     area=1.96

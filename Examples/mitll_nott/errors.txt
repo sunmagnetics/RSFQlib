@@ -1,4 +1,0 @@
-Violation of critical timing in module tb_test_nott.DUT; 40 ps.
-
-Violation of critical timing in module tb_test_nott.DUT; 40 ps.
-
