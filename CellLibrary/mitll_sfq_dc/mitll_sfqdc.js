@@ -2,7 +2,7 @@
 * Begin .SUBCKT model                    *
 * spice-sdb ver 4.28.2007                *
 *                                        *
-*		        Version: 1.1			 *
+*		        Version: 1.1.31			 *
 *										 *
 * Modified 26 Oct 2018, L Schindler, SU  *
 *   (Updated parameter values)	         *

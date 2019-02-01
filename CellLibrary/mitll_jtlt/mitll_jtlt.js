@@ -2,7 +2,7 @@
 * Begin .SUBCKT model                    *
 * spice-sdb ver 4.28.2007                *
 *                                        *
-*		        Version: 1.1			 *
+*		        Version: 1.1.31			 *
 *										 *
 * RSFQ generic cell for MITLL sfq5ee     *
 * Project under IARPA-BAA-16-03          *

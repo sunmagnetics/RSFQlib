@@ -2,12 +2,15 @@
 * Begin .SUBCKT model                   *
 * spice-sdb ver 4.28.2007               *
 *                                       *
-*		        Version: 1.1			*
+*		        Version: 1.1.31			*
 *										* 
 * RSFQ generic cell for MITLL sfq5ee    *
 * Authored 3 Nov 2015, CJ Fourie, SU    *
-* Last mod 26 Oct 2018, L Schindler, SU *
+* Modified 26 Oct 2018, L Schindler, SU *
 *   (Updated parameter values)	        *
+* Last mod 31 Jan 2019, L Schindler, SU *
+*   (Updated parameter values to		*
+*		comply with layouts)	        *
 *****************************************
 .SUBCKT mitll_dcsfq 8 11 
 *==============  Begin SPICE netlist of main design ============
@@ -27,9 +30,9 @@ Lp3  6  0  0.2p
 LRB1 9  2  1p  
 LRB2 10 4  1p  
 LRB3 12 6  1p  
-RB1  1  9  4.31  
-RB2  3  10 4.31  
-RB3  5  12 3.88  
+RB1  1  9  3.0488  
+RB2  3  10 3.0488
+RB3  5  12 2.7440
 .model jjmitll100 jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
 .ends mitll_dcsfq
 *******************************
