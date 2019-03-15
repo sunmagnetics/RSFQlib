@@ -1,5 +1,7 @@
 # RSFQlib
-RSFQ cell library V1.02
+Author: Lieze Schindler
+RSFQ cell library V1.1.31
+
 
 This cell library was developed under the IARPA SuperTools/ColdFlux contract via the U.S. Army Research Office grant W911NF-17-1-0120. The aim was to create a generic RSFQ cell library which can be used by circuit designers. 
 The libraries were developed using open-source tools - WRspice and XIC. 
