@@ -4,48 +4,68 @@
 * Last modification date: 26 October 2018
 * Last modification by: L. Schindler
 
+* Copyright (c) 2018-2019 Lieze Schindler, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+*For questions about the library, contact Lieze Schindler, 17528283@sun.ac.za
+
 .param Scaling=1.0
 .param B0=1
 .param Ic0=0.0001
-.param IcRs=100u*6.859904418
+.param IcRs=100u*6.86
 .param B0Rs=IcRs/Ic0*B0
 .param Rsheet=2 
-.param Lsheet=1.13e-12 
-
-.param B01=1.9518*Scaling
-.param B01rx2=1.1720*Scaling
-.param B01rx3=0.8056*Scaling
-.param B01tx1=1.9004*Scaling
-.param B02=1.3074*Scaling
-.param B02rx3=0.7521*Scaling
-.param B03rx3=0.6339*Scaling
-.param B05=1.7221*Scaling
-.param B08=1.3953*Scaling
-.param B09=1.6170*Scaling
-.param B10=2.2048*Scaling
-.param IB01=0.0003277005*Scaling
-.param IB01rx2=0.0001412752*Scaling
-.param IB01rx3=9.8325e-05*Scaling
-.param IB01tx1=0.0001765029*Scaling
-.param IB02=8.1358e-05*Scaling
-.param IB04=8.0964e-05*Scaling
-.param L01=2.6809e-12*(1/Scaling-(1-Scaling))
-.param L01rx2=2.0307e-12*(1/Scaling-(1-Scaling))
-.param L01rx3=1.4136e-12*(1/Scaling-(1-Scaling))
-.param L01tx1=4.2904e-12*(1/Scaling-(1-Scaling))
-.param L02=1.3486e-12*(1/Scaling-(1-Scaling))
-.param L02rx2=2.0822e-12*(1/Scaling-(1-Scaling))
-.param L02rx3=3.3652e-12*(1/Scaling-(1-Scaling))
-.param L02tx1=2.7779e-12*(1/Scaling-(1-Scaling))
-.param L03rx3=4.0267e-12*(1/Scaling-(1-Scaling))
-.param L05=3.7250e-13*(1/Scaling-(1-Scaling))
-.param L06=1.8890e-12*(1/Scaling-(1-Scaling))
-.param L07=2.1922e-13*(1/Scaling-(1-Scaling))
-.param L08=5.4916e-12*(1/Scaling-(1-Scaling))
-.param L09=1.5727e-12*(1/Scaling-(1-Scaling))
-.param L13=2.0776e-12*(1/Scaling-(1-Scaling))
-.param L14=8.8496e-13*(1/Scaling-(1-Scaling))
-
+.param Lsheet=1e-12 
+.param B01=1.9518 
+.param B01rx2=1.1720 
+.param B01rx3=0.8056 
+.param B01tx1=1.9004 
+.param B02=1.3074 
+.param B02rx3=0.7521 
+.param B03rx3=0.6339 
+.param B05=1.7221 
+.param B08=1.3953 
+.param B09=1.6170 
+.param B10=2.2048 
+.param IB01=0.0003277005 
+.param IB01rx2=0.0001412752 
+.param IB01rx3=9.8325e-05 
+.param IB01tx1=0.0001765029 
+.param IB02=8.1358e-05 
+.param IB04=8.0964e-05 
+.param L01=2.6809e-12 
+.param L01rx2=2.0307e-12 
+.param L01rx3=1.4136e-12 
+.param L01tx1=4.2904e-12 
+.param L02=1.3486e-12 
+.param L02rx2=2.0822e-12 
+.param L02rx3=3.3652e-12 
+.param L02tx1=2.7779e-12 
+.param L03rx3=4.0267e-12 
+.param L05=3.7250e-13 
+.param L06=1.8890e-12 
+.param L07=2.1922e-13 
+.param L08=5.4916e-12 
+.param L09=1.5727e-12 
+.param L13=2.0776e-12 
+.param L14=8.8496e-13 
 .param LRB01=(RB01/Rsheet)*Lsheet
 .param LRB01rx1=(RB01rx1/Rsheet)*Lsheet
 .param LRB01rx2=(RB01rx2/Rsheet)*Lsheet
@@ -60,7 +80,6 @@
 .param LRB08=(RB08/Rsheet)*Lsheet
 .param LRB09=(RB09/Rsheet)*Lsheet
 .param LRB10=(RB10/Rsheet)*Lsheet
-
 .param RB01=B0Rs/B01
 .param RB01rx1=B0Rs/B01rx2
 .param RB01rx2=B0Rs/B01rx2
@@ -75,8 +94,7 @@
 .param RB08=B0Rs/B08
 .param RB09=B0Rs/B09
 .param RB10=B0Rs/B10
-
-.subckt MITLL_OR2T IN_CLK IN_1 IN_2 OUT
+.subckt LSMITLL_OR2T IN_CLK IN_1 IN_2 OUT
 B01 7 36 62 jmitll area=B01
 B01rx1 9 34 61 jmitll area=B01rx2
 B01rx2 19 54 70 jmitll area=B01rx2
@@ -164,5 +182,5 @@ RB08 14 47 RB08
 RB09 15 49 RB09
 RB10 10 41 RB10
 RINStx1 43 OUT 1.36
-.ends MITLL_OR2T
+.ends LSMITLL_OR2T
 .model jmitll jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)

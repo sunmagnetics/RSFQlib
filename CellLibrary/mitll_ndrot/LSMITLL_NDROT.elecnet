@@ -4,62 +4,84 @@
 * Last modification date: 26 October 2018
 * Last modification by: L. Schindler
 
+* Copyright (c) 2018-2019 Lieze Schindler, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+*For questions about the library, contact Lieze Schindler, 17528283@sun.ac.za
+
 .param Scaling=1.0
 .param B0=1
 .param Ic0=0.0001
-.param IcRs=100u*6.859904418
+.param IcRs=100u*6.86
 .param B0Rs=IcRs/Ic0*B0
 .param Rsheet=2 
-.param Lsheet=1.13e-12 
-.param B01=2.1788*Scaling
-.param B01rx1=0.8597*Scaling
-.param B01rx3=0.9892*Scaling
-.param B01tx1=2.3613*Scaling
-.param B02=1.6498*Scaling
-.param B02rx1=1.0002*Scaling
-.param B02rx3=0.9426*Scaling
-.param B03=2.3464*Scaling
-.param B04=1.9597*Scaling
-.param B05=2.8368*Scaling
-.param B06=1.9079*Scaling
-.param B07=1.7749*Scaling
-.param B08=1.1619*Scaling
-.param B09=0.7782*Scaling
-.param B10=1.6313*Scaling
-.param B11=1.5079*Scaling
-.param IB01=0.000223851*Scaling
-.param IB01rx1=0.000134142*Scaling
-.param IB01rx3=0.000131798*Scaling
-.param IB01tx1=0.000195509*Scaling
-.param IB02=0.000152193*Scaling
-.param IB03=0.000198086*Scaling
-.param IB04=9.85166e-05*Scaling
-.param IB05=9.47282e-05*Scaling
-.param IB06=6.36747e-05*Scaling
-.param L01=7.5833e-012*(1/Scaling-(1-Scaling))
-.param L01rx1=1.9122e-012*(1/Scaling-(1-Scaling))
-.param L01rx3=1.7869e-12*(1/Scaling-(1-Scaling))
-.param L01tx1=3.5427e-12*(1/Scaling-(1-Scaling))
-.param L02=1.3381e-12*(1/Scaling-(1-Scaling))
-.param L02rx1=4.0481e-12*(1/Scaling-(1-Scaling))
-.param L02rx3=4.3135e-12*(1/Scaling-(1-Scaling))
-.param L02tx1=3.5270e-12*(1/Scaling-(1-Scaling))
-.param L03=4.3879e-12*(1/Scaling-(1-Scaling))
-.param L03rx1=3.6036e-12*(1/Scaling-(1-Scaling))
-.param L03rx3=3.9260e-12*(1/Scaling-(1-Scaling))
-.param L04=3.2170e-12*(1/Scaling-(1-Scaling))
-.param L05=7.2183e-12*(1/Scaling-(1-Scaling))
-.param L06=3.0677e-12*(1/Scaling-(1-Scaling))
-.param L07=2.5596e-12*(1/Scaling-(1-Scaling))
-.param L08=3.2439e-12*(1/Scaling-(1-Scaling))
-.param L09=3.7382e-13*(1/Scaling-(1-Scaling))
-.param L10=5.2995e-13*(1/Scaling-(1-Scaling))
-.param L11=2.5089e-12*(1/Scaling-(1-Scaling))
-.param L13=9.5137e-13*(1/Scaling-(1-Scaling))
-.param L14=4.7528e-14*(1/Scaling-(1-Scaling))
-.param L15=1.2875e-12*(1/Scaling-(1-Scaling))
-.param L16=1.0678e-12*(1/Scaling-(1-Scaling))
-.param L17=1.2791e-12*(1/Scaling-(1-Scaling))
+.param Lsheet=1e-12 
+.param B01=2.1788 
+.param B01rx1=0.8597 
+.param B01rx3=0.9892 
+.param B01tx1=2.3613 
+.param B02=1.6498 
+.param B02rx1=1.0002 
+.param B02rx3=0.9426 
+.param B03=2.3464 
+.param B04=1.9597 
+.param B05=2.8368 
+.param B06=1.9079 
+.param B07=1.7749 
+.param B08=1.1619 
+.param B09=0.7782 
+.param B10=1.6313 
+.param B11=1.5079 
+.param IB01=0.000223851 
+.param IB01rx1=0.000134142 
+.param IB01rx3=0.000131798 
+.param IB01tx1=0.000195509 
+.param IB02=0.000152193 
+.param IB03=0.000198086 
+.param IB04=9.85166e-05 
+.param IB05=9.47282e-05 
+.param IB06=6.36747e-05 
+.param L01=7.5833e-012 
+.param L01rx1=1.9122e-012 
+.param L01rx3=1.7869e-12 
+.param L01tx1=3.5427e-12 
+.param L02=1.3381e-12 
+.param L02rx1=4.0481e-12 
+.param L02rx3=4.3135e-12 
+.param L02tx1=3.5270e-12 
+.param L03=4.3879e-12 
+.param L03rx1=3.6036e-12 
+.param L03rx3=3.9260e-12 
+.param L04=3.2170e-12 
+.param L05=7.2183e-12 
+.param L06=3.0677e-12 
+.param L07=2.5596e-12 
+.param L08=3.2439e-12 
+.param L09=3.7382e-13 
+.param L10=5.2995e-13 
+.param L11=2.5089e-12 
+.param L13=9.5137e-13 
+.param L14=4.7528e-14 
+.param L15=1.2875e-12 
+.param L16=1.0678e-12 
+.param L17=1.2791e-12 
 .param LRB01=(RB01/Rsheet)*Lsheet
 .param LRB01rx1=(RB01rx1/Rsheet)*Lsheet
 .param LRB01rx3=(RB01rx3/Rsheet)*Lsheet
@@ -95,8 +117,7 @@
 .param RB09=B0Rs/B09
 .param RB10=B0Rs/B10
 .param RB11=B0Rs/B11
-
-.subckt MITLL_NDROT IN_SET IN_RESET IN_CLK OUT
+.subckt LSMITLL_NDROT IN_SET IN_RESET IN_CLK OUT
 B01 22 66 89 jmitll area=B01
 B01rx1 7 32 76 jmitll area=B01rx1
 B01rx2 13 44 81 jmitll area=B01rx1
@@ -212,9 +233,7 @@ RB09 10 52 RB09
 RB10 23 70 RB10
 RB11 24 72 RB11
 RINStx1 61 OUT 1.36
-.ends MITLL_NDROT
-.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
-
+.ends LSMITLL_NDROT
 .model jmitll jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
 
 
