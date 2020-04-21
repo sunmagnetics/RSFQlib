@@ -1,6 +1,6 @@
 * Author: L. Schindler
 * Version: 1.1.40
-* Last modification date: 09 April 2020
+* Last modification date: 20 April 2020
 * Last modification by: L. Schindler
 
 * Copyright (c) 2018-2020 Lieze Schindler, Stellenbosch University
@@ -40,7 +40,7 @@
 .param B03=1.13403
 .param B05=1.52701
 .param B07=1.25725
-.param B08=1.16701
+.param B08=1.56701
 .param B09=2.03545 
 .param B10=1.75934
 .param B14=1.50181
