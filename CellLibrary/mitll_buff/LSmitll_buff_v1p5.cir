@@ -1,0 +1,52 @@
+* Author: L. Schindler
+* Version: 1.5.1
+* Last modification date: 11 June 2020
+* Last modification by: L. Schindler
+
+* Copyright (c) 2018-2020 Lieze Schindler, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+*For questions about the library, contact Lieze Schindler, 17528283@sun.ac.za
+
+*             in out
+*$Ports  				a  q
+.subckt LSmitll_buff a  q 
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+B1  3 7  jjmit area=2.5
+B2  4 9  jjmit area=2.5
+B3 2 11 jjmit area=2.5
+IB1 0 5 pwl(0 0 5p 325u)
+IB2 0 2 pwl(0 0 5p 175u)
+L1 a 3 2p
+L2 3 6 2p
+L3 6 4 2p
+L4 4 2 3.8p
+L5 2 q 2p
+LB1 5 6 0.2p
+LP1 7 0 0.2p
+LP2 9 0 0.2p
+LP3 11 0 0.2p
+LRB1 3 8 1.55E-12
+LRB2 4 10 1.55E-12
+LRB3 12 0 1.55E-12
+RB1 8 0 2.744
+RB2 10 0 2.744
+RB3 2 12 2.744
+.ends

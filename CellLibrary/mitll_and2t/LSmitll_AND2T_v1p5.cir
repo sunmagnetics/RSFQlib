@@ -1,0 +1,194 @@
+* Author: L. Schindler
+* Version: 1.5.1
+* Last modification date: 18 June 2020
+* Last modification by: L. Schindler
+
+* Copyright (c) 2018-2020 Lieze Schindler, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+*For questions about the library, contact Lieze Schindler, 17528283@sun.ac.za
+
+*$Ports 			  a b clk q	
+.subckt LSmitll_AND2T a b clk q
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param B0=1.0
+.param Ic0=0.0001
+.param IcRs=100u*6.859904418
+.param B0Rs=IcRs/Ic0*B0
+.param Rsheet=2 
+.param Lsheet=1.13e-12 
+.param B01=1.31899
+.param B01rx2=0.88063
+.param B01rx3=0.90139
+.param B01tx1=2.26625 
+.param B03=1.13403
+.param B05=1.52701
+.param B07=1.25725
+.param B08=1.56701
+.param B09=2.03545 
+.param B10=1.75934
+.param B14=1.50181
+.param IB01=0.000113269
+.param IB01rx2=0.000131447
+.param IB01rx3=0.000127540
+.param IB01tx1=0.000213665
+.param IB03=0.000062676
+.param IB07=0.000179300
+.param L01=2.57966e-12 
+.param L01rx2=1.53695e-12 
+.param L01rx3=1.77460e-12 
+.param L01tx1=1.53695e-12 
+.param L02tx1=2.74282e-12 
+.param L03=1.93254e-12 
+.param L05=1.14641e-12 
+.param L07=1.99319e-12 
+.param L08=3.9e-14 
+.param L09=2.92475e-12 
+.param L13=2.23040e-12 
+.param L15=6.10490e-12 
+.param L17=1.94280e-12 
+.param L19=2.03734e-13 
+.param L20=3.99011e-13 
+.param L21=1.29090e-13 
+.param L23=1e-14 
+.param LRB01=(RB01/Rsheet)*Lsheet
+.param LRB01rx2=(RB01rx2/Rsheet)*Lsheet
+.param LRB01rx3=(RB01rx3/Rsheet)*Lsheet
+.param LRB01tx1=(RB01tx1/Rsheet)*Lsheet
+.param LRB03=(RB03/Rsheet)*Lsheet
+.param LRB05=(RB05/Rsheet)*Lsheet
+.param LRB07=(RB07/Rsheet)*Lsheet
+.param LRB08=(RB08/Rsheet)*Lsheet
+.param LRB09=(RB09/Rsheet)*Lsheet
+.param LRB10=(RB10/Rsheet)*Lsheet
+.param LRB14=(RB14/Rsheet)*Lsheet
+.param RB01=B0Rs/B01
+.param RB01rx2=B0Rs/B01rx2
+.param RB01rx3=B0Rs/B01rx3
+.param RB01tx1=B0Rs/B01tx1
+.param RB03=B0Rs/B03
+.param RB05=B0Rs/B05
+.param RB07=B0Rs/B07
+.param RB08=B0Rs/B08
+.param RB09=B0Rs/B09
+.param RB10=B0Rs/B10
+.param RB14=B0Rs/B14
+B01 7 32 jjmit area=B01
+B01RX1 5 28 jjmit area=B01rx2
+B01RX2 20 60 jjmit area=B01rx2
+B01RX3 13 43 jjmit area=B01rx3
+B01TX1 18 53 jjmit area=B01tx1
+B02 22 64 jjmit area=B01
+B03 8 10 jjmit area=B03
+B04 23 19 jjmit area=B03
+B05 9 11 jjmit area=B05
+B06 24 11 jjmit area=B05
+B07 16 49 jjmit area=B07
+B08 15 47 jjmit area=B08
+B09 17 51 jjmit area=B09
+B10 6 30 jjmit area=B10
+B11 21 62 jjmit area=B10
+B14 14 45 jjmit area=B14
+IB01 0 26 pwl(0 0 5p IB01)
+IB01RX1 0 25 pwl(0 0 5p IB01rx2)
+IB01RX2 0 55 pwl(0 0 5p IB01rx2)
+IB01RX3 0 36 pwl(0 0 5p IB01rx3)
+IB01TX1 0 39 pwl(0 0 5p IB01tx1)
+IB02 0 56 pwl(0 0 5p IB01)
+IB03 0 38 pwl(0 0 5p IB03)
+IB07 0 37 pwl(0 0 5p IB07)
+L01 8 9 L01
+L01RX1 a 5 L01rx2
+L01RX2 b 20 L01rx2
+L01RX3 clk 13 L01rx3
+L01TX1 17 18 L01tx1
+L02 23 24 L01
+L02TX1 18 42 L02tx1
+L03 6 27 L03
+L04 21 59 L03
+L05 10 12 L05
+L06 12 19 L05
+L07 40 15 L07
+L08 16 41 L08
+L09 41 17 L09
+L13 5 6 L13
+L14 20 21 L13
+L15 27 7 L15
+L16 59 22 L15
+L17 13 14 L17
+L19 14 40 L19
+L20 11 16 L20
+L21 7 8 L21
+L22 22 23 L21
+L23 15 12 L23
+LP01 32 0 2.55e-13
+LP01RX1 28 0 3.4e-13
+LP01RX2 60 0 3.4e-13
+LP01RX3 43 0 3.4e-13
+LP01TX1 53 0 5e-14
+LP02 64 0 2.55e-13
+LP07 49 0 2.99e-13
+LP08 47 0 2.11e-13
+LP09 51 0 1.74e-13
+LP10 30 0 2.21e-13
+LP11 62 0 2.21e-13
+LP14 45 0 1.87e-13
+LPR01RX1 25 5 2e-13
+LPR01RX2 55 20 2e-13
+LPR01RX3 36 13 2e-13
+LPR01TX1 39 18 2e-13
+LPR1 26 27 1.3e-14
+LPR2 56 59 1.3e-14
+LPR3 38 41 1.901e-12
+LPR4 37 40 8.5e-13
+LRB01 33 0 LRB01
+LRB01RX1 29 0 LRB01rx2
+LRB01RX2 61 0 LRB01rx2
+LRB01RX3 44 0 LRB01rx3
+LRB01TX1 54 0 LRB01tx1
+LRB02 65 0 LRB01
+LRB03 34 10 LRB03
+LRB04 19 57 LRB03
+LRB05 35 11 LRB05
+LRB06 11 58 LRB05
+LRB07 50 0 LRB07
+LRB08 48 0 LRB08
+LRB09 52 0 LRB09
+LRB10 31 0 LRB10
+LRB11 63 0 LRB10
+LRB14 46 0 LRB14
+RB01 7 33 RB01
+RB01RX1 5 29 RB01rx2
+RB01RX2 20 61 RB01rx2
+RB01RX3 13 44 RB01rx3
+RB01TX1 18 54 RB01tx1
+RB02 22 65 RB01
+RB03 8 34 RB03
+RB04 57 23 RB03
+RB05 9 35 RB05
+RB06 58 24 RB05
+RB07 16 50 RB07
+RB08 15 48 RB08
+RB09 17 52 RB09
+RB10 6 31 RB10
+RB11 21 63 RB10
+RB14 14 46 RB14
+RINSTX1 42 q 1.36
+.ends

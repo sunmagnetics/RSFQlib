@@ -1,0 +1,1 @@
+This buffer is designed to have the same a->q delay as the LSmitll_CLKSPLT_v1p5, LSmitll_CLKSPLTT_v1p5 and LSmitll_BUFFT_v1p5 cells.
