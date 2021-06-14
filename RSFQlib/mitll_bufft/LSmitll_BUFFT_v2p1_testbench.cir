@@ -1,0 +1,162 @@
+* JSIM deck file generated with TimEx
+* === DEVICE-UNDER-TEST ===
+* Back-annotated simulation file written by InductEx v.6.0.4 on 30-4-21.
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 11 June 2021
+* Last modification by: L. Schindler
+* Copyright (c) 2018-2021 Lieze Schindler, Stellenbosch University
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+*For questions about the library, contact Lieze Schindler, lschindler@sun.ac.za
+*$Ports      a  q
+.subckt LSmitll_bufft  a  q
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param B0=1.0
+.param Ic0=0.0001
+.param IcRs=100u*6.859904418
+.param B0Rs=IcRs/Ic0*B0
+.param Rsheet=2 
+.param Lsheet=1.13e-12 
+.param RD=1.36
+.param LB=0.2p
+.param Lptl=2p
+.param LP=0.2p
+.param B1=2.0
+.param B2=2.5
+.param B3=2.5
+.param IB1=168u
+.param IB2=340u
+.param LB1=LB
+.param LB2=LB
+.param L1=Lptl
+.param L2=6.2p
+.param L3=2.07p
+.param L4=2.07p
+.param L5=Lptl
+.param LP1=LP
+.param LP2=LP
+.param LP3=LP
+.param RB1=B0Rs/B1
+.param RB2=B0Rs/B2
+.param RB3=B0Rs/B3
+.param LRB1=(RB1/Rsheet)*Lsheet
+.param LRB2=(RB2/Rsheet)*Lsheet
+.param LRB3=(RB3/Rsheet)*Lsheet
+B1 2 3 jjmit area=B1
+B2 6 7 jjmit area=B2
+B3 11 12 jjmit area=B3
+IB1 0 5 pwl(0 0 5p IB1)
+IB2 0 10 pwl(0 0 5p IB2)
+L1 a 2 2.727E-12
+L2 2 6 6.22E-12  
+L3 6 9 2.06E-12
+L4 9 11 2.051E-12
+L5 11 14 2.041E-12
+RD 14 q RD
+LP1 3 0 5.275E-13
+LP2 7 0 5.212E-13
+LP3 12 0 5.126E-13
+RB1 2 4 RB1
+RB2 6 8 RB2
+RB3 11 13 RB3
+LRB1 4 0 LRB1
+LRB2 8 0 LRB2
+LRB3 13 0 LRB3
+LB1 2 5 2.883E-12
+LB2 9 10 2.393E-12
+.ends
+* === SOURCE DEFINITION ===
+.SUBCKT SOURCECELL  8 22
+b1    1  2  jjmitll100 area=2.25
+b2    3  4  jjmitll100 area=2.25
+b3    5  6  jjmitll100 area=2.5
+ib1   0  2  pwl(0 0 5p 275ua)
+ib2   0  5  pwl(0 0 5p 175ua)
+l1    8  7  1p
+l2    7  0  3.9p
+l3    7  1  0.6p
+l4    2  3  1.1p
+l5    3  5  4.5p
+l6    5  11 2p
+lp2   4  0  0.2p
+lp3   6  0  0.2p
+lrb1  9  2  1p
+lrb2  10 4  1p
+lrb3  12 6  1p
+rb1   1  9  4.31
+rb2   3  10 4.31
+rb3   5  12 3.88
+b01   23 27 jjmitll100 area=2
+b02   24 26 jjmitll100 area=1.62
+ib01  0  30 pwl(0      0 5p 0.00023)
+ib02  0  31 pwl(0      0 5p 8.2e-005)
+l01   11 23 2.5e-012
+l02   23 24 3.3e-012
+l03   24 25 3.5e-013
+lp01  0  27 5e-014
+lp02  0  26 1.2e-013
+lpr01 23 30 2e-013
+lpr02 24 31 1.3e-012
+lrb01 27 28 1e-012
+lrb02 26 29 1e-012
+rb01  28 23 4.85
+rb02  29 24 6.3
+rins  25 22 1.36
+.model jjmitll100 jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160, rn=16, icrit=0.1ma)
+.ENDS SOURCECELL
+* === INPUT LOAD DEFINITION ===
+.SUBCKT LOADINCELL  2 5
+tload 2 0 5 0 lossless z0=5 td=10p
+.ENDS LOADINCELL
+* === OUTPUT LOAD DEFINITION ===
+.SUBCKT LOADOUTCELL  2 5
+tload 2 0 5 0 lossless z0=5 td=50p
+.ENDS LOADOUTCELL
+* === SINK DEFINITION ===
+.SUBCKT SINKCELL  2
+b1    1  9  jjmitll100     area=1
+b2    4  8  jjmitll100     area=1
+b3    5  7  jjmitll100     area=1
+ib1   0  10 pwl(0      0 5p 145u)
+l1    2  1  0.2p
+l2    1  3  4.3p
+l3    3  4  4.6p
+l4    4  5  6.0p
+l5    5  6  1.3p
+lp1   0  9  0.34p
+lp2   0  8  0.06p
+lp3   0  7  0.03p
+lpr1  3  10 0.2p
+lrb1  9  11 0.5p
+lrb2  8  12 1p
+lrb3  7  13 1p
+rb1   11 1  15.4
+rb2   12 4  11.3
+rb3   13 5  11.3
+rsink 6  0  2
+.model jjmitll100 jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160ohm, rn=16ohm, icrit=0.1ma)
+.ENDS SINKCELL
+* ===== MAIN =====
+I_a 0 1 pwl(0 0 150p 0 153p 600u 156p 0 250p 0 253p 600u 256p 0 280p 0 283p 600u 286p 0 540p 0 543p 600u 546p 0 600p 0 603p 600u 606p 0 640p 0 643p 600u 646p 0 780p 0 783p 600u 786p 0)
+XSOURCEINa SOURCECELL 1 2
+XLOADINa LOADINCELL 2 3
+XLOADOUTq LOADOUTCELL 4 5
+XSINKOUTq SINKCELL 5
+XDUT lsmitll_bufft 3 4
+.tran 0.025p 1000p 0
+.print i(L1.XDUT) p(B1.XDUT) i(L5.XDUT) p(B3.XDUT)
+.end

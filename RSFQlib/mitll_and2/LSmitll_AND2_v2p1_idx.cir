@@ -1,0 +1,75 @@
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 25 March 2021
+* Last modification by: L. Schindler
+
+.control
+	back-annotate LSmitll_AND2_v2p1_base.cir
+.endc
+
+* Inductors
+L1 a 1 2.068p [L1]
+L2 1 4 2.835p [L2]
+L3 5 8 9.789p [L3]
+L4 9 10 1.045p [L4]
+L5 8 12 3.104p [L5]
+L6 b 14 2.068p [L6]
+L7 14 17 2.835p [L7]
+L8 18 21 9.789p [L8]
+L9 22 10 1.045p [L9]
+L10 21 24 3.104p [L10]
+L11 clk 25 2.068p [L11]
+L12 25 31 2.947p [L12]
+L13 31 10 1.000p [L13]
+L14 13 28 1.040p [L14]
+L15 28 q 2.068p [L15]
+
+LB1 3 1 
+LB2 7 5 
+LB3 16 14 
+LB4 20 18 
+LB5 27 25 
+LB6 30 28 
+LB7 33 31 
+
+LP1 2 0 [LP1]
+LP3 6 0 [LP3]
+LP5 11 0 [LP5]
+LP7 15 0 [LP7]
+LP9 19 0 [LP9]
+LP11 23 0 [LP11]
+LP13 26 0 [LP13]
+LP14 32 0 [LP14]
+LP15 29 0 [LP15]
+
+
+* Ports
+P1 a 0
+P2 b 0
+P3 clk 0
+P4 q 0
+
+J1 1 2 250u
+J2 4 5 201u
+J3 5 6 191u
+J4 8 9 126u
+J5 8 11 157u
+J6 12 13 119u
+J7 14 15 250u
+J8 17 18 201u
+J9 18 19 191u
+J10 21 22 126u
+J11 21 23 157u
+J12 24 13 119u
+J13 25 26 250u
+J14 31 32 206u
+J15 28 29 250u
+
+PB1 3 0
+PB2 7 0
+PB3 16 0
+PB4 20 0
+PB5 27 0
+PB6 33 0
+PB7 30 0
+.ends

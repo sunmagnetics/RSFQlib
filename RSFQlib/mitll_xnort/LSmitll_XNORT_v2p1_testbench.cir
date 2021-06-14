@@ -1,0 +1,321 @@
+* JSIM deck file generated with TimEx
+* === DEVICE-UNDER-TEST ===
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 7 June 2021
+* Last modification by: L. Schindler
+
+* Copyright (c) 2018-2021 Lieze Schindler, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+* For questions about the library, contact Lieze Schindler, lschindler@sun.ac.za
+
+*$Ports  a b clk q
+.subckt LSMITLL_XNORT a b clk q
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param Phi0=2.067833848E-15
+.param B0=1
+.param Ic0=0.0001
+.param IcRs=100u*6.859904418
+.param B0Rs=IcRs/Ic0*B0
+.param Rsheet=2 
+.param Lsheet=1.13e-12 
+.param LP=0.2p
+.param IC=2.5
+.param Lptl=2p
+.param LB=2p
+.param BiasCoef=0.7
+.param B1=2.0
+.param B2=2.74
+.param B3=2.23
+.param B4=B1
+.param B5=B2
+.param B6=B3
+.param B7=2.40
+.param B8=3.29
+.param B9=2.0
+.param B10=2.42
+.param B11=1.36
+.param B12=2.40
+.param B13=2.28
+.param B14=1.75
+.param B15=1.07
+.param B16=1.54
+.param B17=1.64
+.param B18=2.5
+.param IB1=195E-6
+.param IB2=168E-6
+.param IB3=IB1
+.param IB4=IB2
+.param IB5=175E-6
+.param IB6=195E-6
+.param IB7=60E-6
+.param IB8=262E-6
+.param IB9=53E-6
+.param IB10=175E-6
+.param L1=Lptl
+.param L2=2.10e-12
+.param L3=1p
+.param L4=4.12e-12
+.param L5=L1
+.param L6=L2
+.param L7=L3
+.param L8=L4
+.param L9=1p
+.param L10=Lptl
+.param L11=3.11e-12
+.param L12=1.07E-12
+.param L13=1.01E-12
+.param L14=2.45e-12
+.param L15=1.83e-12
+.param L16=1.12e-12
+.param L17=4.32e-12
+.param L18=1.6p
+.param L20=1.06E-12
+.param L21=0.55E-12
+.param L22=5.40e-12
+.param L23=1.18e-12
+.param L24=2.78e-12
+.param L25=Lptl
+.param RD=1.36
+.param RB1=B0Rs/B1       
+.param RB2=B0Rs/B2       
+.param RB3=B0Rs/B3          
+.param RB4=B0Rs/B4         
+.param RB5=B0Rs/B5         
+.param RB6=B0Rs/B6          
+.param RB7=B0Rs/B7
+.param RB8=B0Rs/B8         
+.param RB9=B0Rs/B9         
+.param RB10=B0Rs/B10
+.param RB11=B0Rs/B11
+.param RB12=B0Rs/B12
+.param RB13=B0Rs/B13
+.param RB14=B0Rs/B14
+.param RB15=B0Rs/B15
+.param RB16=B0Rs/B16
+.param RB17=B0Rs/B17
+.param RB18=B0Rs/B18
+.param LRB1=(RB1/Rsheet)*Lsheet
+.param LRB2=(RB2/Rsheet)*Lsheet
+.param LRB3=(RB3/Rsheet)*Lsheet
+.param LRB4=(RB4/Rsheet)*Lsheet
+.param LRB5=(RB5/Rsheet)*Lsheet
+.param LRB6=(RB6/Rsheet)*Lsheet
+.param LRB7=(RB7/Rsheet)*Lsheet
+.param LRB8=(RB8/Rsheet)*Lsheet
+.param LRB9=(RB9/Rsheet)*Lsheet
+.param LRB10=(RB10/Rsheet)*Lsheet
+.param LRB11=(RB11/Rsheet)*Lsheet
+.param LRB12=(RB12/Rsheet)*Lsheet
+.param LRB13=(RB13/Rsheet)*Lsheet
+.param LRB14=(RB14/Rsheet)*Lsheet
+.param LRB15=(RB15/Rsheet)*Lsheet
+.param LRB16=(RB16/Rsheet)*Lsheet
+.param LRB17=(RB17/Rsheet)*Lsheet
+.param LRB18=(RB18/Rsheet)*Lsheet
+B1 1 2 jjmit area=B1
+B2 3 4 jjmit area=B2
+B3 5 6 jjmit area=B3
+B4 8 9 jjmit area=B4
+B5 10 11 jjmit area=B5
+B6 12 13 jjmit area=B6
+B7 14 15 jjmit area=B7
+B8 15 16 jjmit area=B8
+B9 17 18 jjmit area=B9
+B10 19 20 jjmit area=B10
+B11 22 15 jjmit area=B11
+B12 23 24 jjmit area=B12
+B13 26 27 jjmit area=B13
+B14 29 34 jjmit area=B14
+B15 34 31 jjmit area=B15
+B16 28 33 jjmit area=B16
+B17 35 36 jjmit area=B17
+B18 37 38 jjmit area=B18
+LP1 2 0 LP
+LP2 4 0 LP
+LP4 9 0 LP
+LP5 11 0 LP
+LP8 16 0 LP
+LP9 18 0 LP
+LP10 20 0 LP
+LP12 24 0 LP
+LP13 27 0 LP
+LP17 36 0 LP
+LP18 38 0 LP
+IB1 0 1 pwl(0 0 5p IB1)
+IB2 0 6 pwl(0 0 5p IB2)
+IB3 0 8 pwl(0 0 5p IB3)
+IB4 0 13 pwl(0 0 5p IB4)
+IB5 0 17 pwl(0 0 5p IB5)
+IB6 0 19 pwl(0 0 5p IB6)
+IB7 0 25 pwl(0 0 5p IB7)
+IB8 0 34 pwl(0 0 5p IB8)
+IB9 0 35 pwl(0 0 5p IB9)
+IB10 0 37 pwl(0 0 5p IB10)
+L1 a 1 L1
+L2 1 3 L2
+L3 3 5 L3
+L4 6 7 L4
+L5 b 8 L5
+L6 8 10 L6
+L7 10 12 L7
+L8 13 7 L8
+L9 7 14 L9
+L10 clk 17 L10
+L11 17 19 L11
+L12 19 21 L12
+L13 21 22 L13
+L14 21 23 L14
+L15 23 25 L15
+L16 25 26 L16
+L17 26 28 L17
+L18 15 29 L18
+L20 31 32 L20
+L21 33 32 L21
+L22 34 28 L22
+L23 32 35 L23
+L24 35 37 L24
+L25 37 39 L25
+RD 39 q RD
+RB1 1 101 RB1
+LRB1 101 0 LRB1
+RB2 3 103 RB2
+LRB2 103 0 LRB2
+RB3 5 105 RB3
+LRB3 105 6 LRB3
+RB4 8 108 RB4
+LRB4 108 0 LRB4
+RB5 10 110 RB5
+LRB5 110 0 LRB5
+RB6 12 112 RB6
+LRB6 112 13 LRB6
+RB7 14 114 RB7
+LRB7 114 15 LRB7
+RB8 15 115 RB8
+LRB8 115 0 LRB8
+RB9 17 117 RB9
+LRB9 117 0 LRB9
+RB10 19 119 RB10
+LRB10 119 0 LRB10
+RB11 22 122 RB11
+LRB11 122 15 LRB11
+RB12 23 123 RB12
+LRB12 123 0 LRB12
+RB13 26 126 RB13
+LRB13 126 0 LRB13
+RB14 29 129 RB14
+LRB14 129 34 LRB14
+RB15 34 130 RB15
+LRB15 130 31 LRB15
+RB16 28 128 RB16
+LRB16 128 33 LRB16
+RB17 35 135 RB17
+LRB17 135 0 LRB17
+RB18 37 137 RB18
+LRB18 137 0 LRB18
+.ends
+* === SOURCE DEFINITION ===
+.SUBCKT SOURCECELL  8 22
+b1    1  2  jjmitll100 area=2.25
+b2    3  4  jjmitll100 area=2.25
+b3    5  6  jjmitll100 area=2.5
+ib1   0  2  pwl(0 0 5p 275ua)
+ib2   0  5  pwl(0 0 5p 175ua)
+l1    8  7  1p
+l2    7  0  3.9p
+l3    7  1  0.6p
+l4    2  3  1.1p
+l5    3  5  4.5p
+l6    5  11 2p
+lp2   4  0  0.2p
+lp3   6  0  0.2p
+lrb1  9  2  1p
+lrb2  10 4  1p
+lrb3  12 6  1p
+rb1   1  9  4.31
+rb2   3  10 4.31
+rb3   5  12 3.88
+b01   23 27 jjmitll100 area=2
+b02   24 26 jjmitll100 area=1.62
+ib01  0  30 pwl(0      0 5p 0.00023)
+ib02  0  31 pwl(0      0 5p 8.2e-005)
+l01   11 23 2.5e-012
+l02   23 24 3.3e-012
+l03   24 25 3.5e-013
+lp01  0  27 5e-014
+lp02  0  26 1.2e-013
+lpr01 23 30 2e-013
+lpr02 24 31 1.3e-012
+lrb01 27 28 1e-012
+lrb02 26 29 1e-012
+rb01  28 23 4.85
+rb02  29 24 6.3
+rins  25 22 1.36
+.model jjmitll100 jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160, rn=16, icrit=0.1ma)
+.ENDS SOURCECELL
+* === INPUT LOAD DEFINITION ===
+.SUBCKT LOADINCELL  2 5
+tload 2 0 5 0 lossless z0=5 td=10p
+.ENDS LOADINCELL
+* === OUTPUT LOAD DEFINITION ===
+.SUBCKT LOADOUTCELL  2 5
+tload 2 0 5 0 lossless z0=5 td=50p
+.ENDS LOADOUTCELL
+* === SINK DEFINITION ===
+.SUBCKT SINKCELL  2
+b1    1  9  jjmitll100     area=1
+b2    4  8  jjmitll100     area=1
+b3    5  7  jjmitll100     area=1
+ib1   0  10 pwl(0      0 5p 145u)
+l1    2  1  0.2p
+l2    1  3  4.3p
+l3    3  4  4.6p
+l4    4  5  6.0p
+l5    5  6  1.3p
+lp1   0  9  0.34p
+lp2   0  8  0.06p
+lp3   0  7  0.03p
+lpr1  3  10 0.2p
+lrb1  9  11 0.5p
+lrb2  8  12 1p
+lrb3  7  13 1p
+rb1   11 1  15.4
+rb2   12 4  11.3
+rb3   13 5  11.3
+rsink 6  0  2
+.model jjmitll100 jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160ohm, rn=16ohm, icrit=0.1ma)
+.ENDS SINKCELL
+* ===== MAIN =====
+I_a 0 1 pwl(0 0 150p 0 153p 600u 156p 0 250p 0 253p 600u 256p 0 280p 0 283p 600u 286p 0 540p 0 543p 600u 546p 0 600p 0 603p 600u 606p 0 640p 0 643p 600u 646p 0 780p 0 783p 600u 786p 0)
+XSOURCEINa SOURCECELL 1 2
+XLOADINa LOADINCELL 2 3
+I_b 0 4 pwl(0 0 350p 0 353p 600u 356p 0 450p 0 453p 600u 456p 0 480p 0 483p 600u 486p 0 560p 0 563p 600u 566p 0 580p 0 583p 600u 586p 0 660p 0 663p 600u 666p 0 740p 0 743p 600u 746p 0)
+XSOURCEINb SOURCECELL 4 5
+XLOADINb LOADINCELL 5 6
+I_clk 0 7 pulse(0 600u 20p 2p 2p 1p 100p)
+XSOURCEINclk SOURCECELL 7 8
+XLOADINclk LOADINCELL 8 9
+XLOADOUTq LOADOUTCELL 10 11
+XSINKOUTq SINKCELL 11
+XDUT lsmitll_xnort 3 6 9 10
+.tran 0.025p 1000p 0
+.print i(L1.XDUT) p(B1.XDUT) i(L5.XDUT) p(B4.XDUT) i(L10.XDUT) p(B9.XDUT) i(L25.XDUT) p(B18.XDUT)
+.end

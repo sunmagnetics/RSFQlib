@@ -1,0 +1,22 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 2 June 2021
+* Last modification by: L. Schindler
+
+.control
+	back-annotate LSmitll_Always0_async_noA_v2p1.cir
+.endc
+
+L1 1 2 [L1]
+L2 2 q [L2]
+LB1 2 4 [LB1]
+LP1 3 0 [LP1]
+
+* Ports
+P1 q 0
+J1 2 3 250
+PB1 4 0
+PR1 1 0
+
+.end

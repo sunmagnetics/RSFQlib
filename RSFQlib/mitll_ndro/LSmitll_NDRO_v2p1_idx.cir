@@ -1,0 +1,66 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 14 April 2021
+* Last modification by: L. Schindler
+
+.control
+	back-annotate LSmitll_NDRO_v2p1_base.cir
+.endc
+
+* Inductors
+L1 a 1 2.068p [L1]
+L2 1 3 0.88909p [L2]
+L3 4 6 2.6889p [L3]
+L4 b 7 2.068p [L4]
+L5 7 9 2.3256p [L5]
+L6 10 6 3.4386p [L6]
+L7 12 13 1.1173p [L7]
+L8 13 17 1.0276p [L8]
+L9 clk 14 2.068p [L9]
+L10 16 17 3.1420p [L10]
+L11 17 19 3.2389p [L11]
+L12 19 q 2.068p [L12]
+
+LB1 1 21 
+LB2 4 22 
+LB3 7 23 
+LB4 14 24 
+LB5 13 25 
+LB6 19 26 
+
+LP1 2 0 [LP1]
+LP3 5 0 [LP3]
+LP4 8 0 [LP4]
+LP6 11 0 [LP6]
+LP8 15 0 [LP8]
+LP10 18 0 [LP10]
+LP11 20 0 [LP11]
+
+
+* Ports
+P1 a 0 
+P2 b 0
+P3 clk 0
+P4 q 0
+
+J1 1 2 250u
+J2 3 4 199u
+J3 4 5 220u
+J4 7 8 250u
+J5 9 10 235u
+J6 10 11 324u
+J7 6 12 74u
+J8 14 15 250u
+J9 14 16 117u
+J10 17 18 109u
+J11 19 20 250u
+
+PB1 21 0
+PB2 22 0
+PB3 23 0
+PB4 24 0
+PB5 25 0
+PB6 26 0
+
+.end

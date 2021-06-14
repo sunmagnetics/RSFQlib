@@ -1,0 +1,28 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 24 April 2021
+* Last modification by: L. Schindler
+
+.control
+	back-annotate LSmitll_ptlrx_v2p1_base.cir
+.endc
+
+* Inductors
+L1 1 2 [L1]
+L2 2 4 4.3p [L2]
+L3 4 6 4.6p [L3]
+L4 6 8 5p [L4]
+L5 8 10 2.3p [L5]
+LB1 4 5 [LB1]
+LP1 3 0 [LP1]
+LP2 7 0 [LP2]
+LP3 9 0 [LP3]
+* Ports
+P1 1 0
+P2 5 0
+P3 10 0
+J1 2 3 100u
+J2 6 7 100u
+J3 8 9 100u
+.end

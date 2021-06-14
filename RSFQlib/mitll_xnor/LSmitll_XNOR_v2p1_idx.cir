@@ -1,0 +1,96 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 16 April 2021
+* Last modification by: L. Schindler
+
+.control
+	back-annotate LSmitll_XNOR_v2p1_base.cir
+.endc
+
+* Inductors
+L1 a 1 2.068p [L1]
+L2 1 3 2.39p [L2]
+L3 3 5 1.1p [L3]
+L4 6 7 4.07p [L4]
+L5 b 8 2.068p [L5]
+L6 8 10 2.39p [L6]
+L7 10 12 1p [L7]
+L8 13 7 4.07p [L8]
+L9 7 14 1.15p [L9]
+L10 clk 17 2.068p [L10]
+L11 17 19 3.43p [L11]
+L12 19 21 0.87p [L12]
+L13 21 22 1.11p [L13]
+L14 21 23 2.10p [L14]
+L15 23 25 1.64p [L15]
+L16 25 26 1.33p [L16]
+L17 26 28 5.2p [L17]
+L18 15 29 1.5p [L18]
+L19 30 34 0.8p [L19]
+L20 31 32 2.06p [L20]
+L21 33 32 0.9p [L21]
+L22 34 28 6.45p [L22]
+L23 32 35 1.01p [L23]
+L24 35 37 3.5p [L24]
+L25 37 q 2.068p [L25]
+
+LB1 101 1
+LB2 106 6
+LB3 108 8
+LB4 113 13
+LB5 117 17
+LB6 119 19
+LB7 125 25
+LB8 134 34
+LB9 135 35
+LB10 137 37
+
+LP1 2 0 [LP1]
+LP2 4 0 [LP2]
+LP4 9 0 [LP4]
+LP5 11 0 [LP5]
+LP8 16 0 [LP8]
+LP9 18 0 [LP9]
+LP10 20 0 [LP10]
+LP12 24 0 [LP12]
+LP13 27 0 [LP13]
+LP17 36 0 [LP17]
+LP18 38 0 [LP18]
+
+* Ports
+P1 a 0
+P2 b 0
+P3 clk 0
+P4 q 0
+
+J1 1 2 250u
+J2 3 4 266u
+J3 5 6 234u
+J4 8 9 250u
+J5 10 11 266u
+J6 12 13 234u
+J7 14 15 231u
+J8 15 16 315u
+J9 17 18 250u
+J10 19 20 258u
+J11 22 15 144u
+J12 23 24 260u
+J13 26 27 271u
+J14 29 30 163u
+J15 30 31 95u
+J16 28 33 144u
+J17 35 36 140u
+J18 37 38 250u
+
+PB1 101 0
+PB2 106 0
+PB3 108 0
+PB4 113 0
+PB5 117 0
+PB6 119 0
+PB7 125 0
+PB8 134 0
+PB9 135 0
+PB10 137 0
+.end

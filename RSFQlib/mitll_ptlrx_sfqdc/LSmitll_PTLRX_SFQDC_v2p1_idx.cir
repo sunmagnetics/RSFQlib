@@ -1,0 +1,61 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 2.1
+* Last modification date: 26 April 2021
+* Last modification by: L. Schindler
+
+.control
+	back-annotate LSmitll_PTLRX_SFQDC_v2p1_base.cir
+.endc
+
+* Inductors
+L1 1 2 [L1]
+L2 2 4 4.3p [L2]
+L3 4 6 4.6p [L3]
+L4 6 8 5p [L4]
+L5 8 10 3.822p [L5]
+L6 10 13 0.827p [L6]
+L7 14 15 1.12884p [L7]
+L9 15 18 5.940p [L9]
+L10 13 19 1.111p [L10]
+L11 20 18 3.216p [L11]
+L12 18 22 0.91p [L12]
+L14 18 23 0.215p [L14]
+L15 24 26 0.954p [L15]
+L16 26 28 3.699p [L16]
+L17 28 30 2.010p [L17]
+L18 30 32 [L18]
+LB1 4 5 [LB1]
+LB2 10 12 [LB2]
+LB3 15 17 [LB3]
+LB4 24 25 [LB4]
+LB5 28 29 [LB5]
+LP1 3 0 [LP1]
+LP2 7 0 [LP2]
+LP3 9 0 [LP3]
+LP4 11 0 [LP4]
+LP6 16 0 [LP6]
+LP8 21 0 [LP8]
+LP10 27 0 [LP10]
+LP11 31 0 [LP11]
+* Ports
+P1 1 0
+P2 32 0
+PR1 22 0
+PB1 5 0
+PB2 12 0
+PB3 17 0
+PB4 25 0
+PB5 29 0
+J1 2 3 100u
+J2 6 7 100u
+J3 8 9 100u
+J4 10 11 325u
+J5 13 14 150u
+J6 15 16 175u
+J7 19 20 200u
+J8 20 21 300u
+J9 23 24 150u
+J10 26 27 150u
+J11 30 31 200u
+.end
