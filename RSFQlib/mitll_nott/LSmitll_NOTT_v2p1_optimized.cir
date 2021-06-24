@@ -1,7 +1,7 @@
-* Back-annotated simulation file written by InductEx v.6.0.4 on 3-6-21.
+* Back-annotated simulation file written by InductEx v.6.0 on 2021/06/23.
 * Author: L. Schindler
 * Version: 2.1
-* Last modification date: 3 June 2021
+* Last modification date: 28 April 2021
 * Last modification by: L. Schindler
 
 * Copyright (c) 2018-2021 Lieze Schindler, Stellenbosch University
@@ -24,9 +24,9 @@
 * OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
 * LIBRARY.
 
-*For questions about the library, contact Lieze Schindler, lschindler@sun.ac.za
+* For questions about the library, contact Lieze Schindler, lschindler@sun.ac.za
 
-*$Ports 			a clk q
+*$Ports a clk q
 .subckt LSmitll_NOTT a clk q
 .model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
 .param B0=1
@@ -46,18 +46,18 @@
 .param B4=1.22
 .param B5=0.77
 .param B6=1.62 
-.param B7=2.21 
+.param B7=2.6
 .param B8=1.22 
 .param B9=1.35
 .param B10=1.04 
 .param B11=1.41
 .param B12=2.5
 
-.param IB1=146u
+.param IB1=192u
 .param IB2=102u
-.param IB3=181u
-.param IB4=95u
-.param IB5=97u
+.param IB3=230u
+.param IB4=80u
+.param IB5=80u
 .param IB6=108u
 .param IB7=187u
 
@@ -138,48 +138,48 @@ IB5 0 28 pwl(0 0 5p IB5)
 IB6 0 35 pwl(0 0 5p IB6)
 IB7 0 39 pwl(0 0 5p IB7)
 
-L1 a 2 1.512E-12
-L2 2 4 4.457E-12
-L3 4 6 2.653E-12
-L4 6 8 1.178E-12
-L5 8 10 2.632E-12
-L7 10 13 3.082E-12
-L8 10 14 9.617E-13
-L9 clk 17 1.474E-12
-L10 17 19 2.503E-12 
-L11 19 21 2.138E-12
-L12 21 23 1.01E-12
-L13 23 25 3.271E-12
-L14 25 27 6.557E-12
-L15 27 15 3.072E-13
-L16 25 29 2.304E-12
-L17 30 31 9.738E-13
-L18 30 32 4.947E-13
-L19 32 34 7.347E-12
-L20 34 36 6.796E-13
-L21 36 38 4.559E-12
-L22 38 41 5.968E-13
+L1 a 2 1.508E-012
+L2 2 4 4.511E-012
+L3 4 6 2.586E-012
+L4 6 8 1.167E-012
+L5 8 10 2.704E-012
+L7 10 13 3.024E-012
+L8 10 14 9.596E-013
+L9 clk 17 1.473E-012
+L10 17 19 2.513E-012 
+L11 19 21 2.146E-012
+L12 21 23 1E-012
+L13 23 25 3.272E-012
+L14 25 27 6.531E-012
+L15 27 15 3.069E-013
+L16 25 29 2.299E-012
+L17 30 31 9.629E-013
+L18 30 32 4.911E-013
+L19 32 34 7.301E-012
+L20 34 36 6.786E-013
+L21 36 38 4.551E-012
+L22 38 41 5.967E-013
 
 RN 13 0 3.54
 RD 41 q RD
 
-LB1 4 5 3.007E-13
-LB2 8 9 1.087E-12
-LB3 19 20 3.264E-12
-LB4 23 24 1.957E-12
-LB5 27 28 2.946E-12
-LB6 34 35 1.302E-12
-LB7 38 39 2.399E-12
+LB1 4 5 4.946E-013
+LB2 8 9 1.09E-012
+LB3 19 20 3.26E-012
+LB4 23 24 1.96E-012
+LB5 27 28 2.94E-012
+LB6 34 35 1.295E-012
+LB7 38 39 2.398E-012
 
-LP1 3 0 4.817E-13
-LP2 7 0 4.958E-13
-LP3 12 0 5.177E-13
-LP6 18 0 4.916E-13
-LP7 22 0 4.956E-13
-LP8 26 0 5.494E-13
-LP10 33 0 6.002E-13
-LP11 37 0 5.068E-13
-LP12 40 0 3.812E-13
+LP1 3 0 4.82E-013
+LP2 7 0 5.068E-013
+LP3 12 0 5.164E-013
+LP6 18 0 4.841E-013
+LP7 22 0 4.831E-013
+LP8 26 0 5.5E-013
+LP10 33 0 6.016E-013
+LP11 37 0 5.043E-013
+LP12 40 0 3.837E-013
 
 RB1 2 102 RB1
 LRB1 102 0 LRB1

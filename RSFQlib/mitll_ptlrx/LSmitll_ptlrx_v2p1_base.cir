@@ -1,6 +1,6 @@
 * Author: L. Schindler
 * Version: 2.1
-* Last modification date: 3 June 2021
+* Last modification date: 22 June 2021
 * Last modification by: L. Schindler
 
 * Copyright (c) 2018-2021 Lieze Schindler, Stellenbosch University
@@ -25,9 +25,10 @@
 
 *For questions about the library, contact Lieze Schindler, lschindler@sun.ac.za
 
-*$Ports 			a q
+*$Ports a q
 .subckt LSmitll_PTLRX a q
 .model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param Phi0=2.067833848E-15
 .param B0=1
 .param Ic0=0.0001
 .param IcRs=100u*6.859904418
@@ -37,24 +38,26 @@
 .param LP=0.5p
 .param LB=2p
 .param Lptl=2p
+.param IC=2.5
+.param BiasCoef=0.7
 
-.param B1=1
-.param B2=1
-.param B3=1
-
-.param IB1=155u
-
+.param B1=IC/1.54
+.param B2=IC/1.25
+.param B3=IC
+.param IB1=Ic0*B1
+.param IB2=BiasCoef*Ic0*B2
+.param IB3=BiasCoef*Ic0*B3
 .param L1=Lptl
-.param L2=4.3p
-.param L3=4.6p
-.param L4=5p
-.param L5=2.3p
+.param L2=Phi0/(2*B1*Ic0)
+.param L3=Phi0/(2*B2*Ic0)
+.param L4=Phi0/(4*IC*Ic0)
 
 .param LB1=LB
+.param LB2=LB
+.param LB3=LB
 .param LP1=LP         
 .param LP2=LP          
 .param LP3=LP  
-
 .param RB1=B0Rs/B1       
 .param RB2=B0Rs/B2       
 .param RB3=B0Rs/B3   
@@ -62,26 +65,27 @@
 .param LRB2=(RB2/Rsheet)*Lsheet
 .param LRB3=(RB3/Rsheet)*Lsheet
 
-B1 3 8 jjmit area=B1
-B2 4 10 jjmit area=B2
-B3 5 12 jjmit area=B3
+B1 1 2 jjmit area=B1
+B2 4 5 jjmit area=B2
+B3 7 8 jjmit area=B3
+IB1 0 3 pwl(0 0 5p IB1)
+LB1 1 3 LB1
+IB2 0 6 pwl(0 0 5p IB2)
+LB2 4 6 LB2
+IB3 0 9 pwl(0 0 5p IB3)
+LB3 7 9 LB3
+L1 a 1 L1
+L2 1 4 L2
+L3 4 7 L3
+L4 7 q L4
 
-IB1 0 6 pwl(0 0 5p IB1)
-LB1 6 7 LB1
-L1 a 3 L1
-L2 3 7 L2
-L3 7 4 L3
-L4 4 5 L4
-L5 5 q L5
-
-LP1 8 0 LP1
-LP2 10 0 LP2
-LP3 12 0 LP3
-
-RB1 3 9 RB1
-RB2 4 11 RB2
-RB3 5 13 RB3
-LRB1 9 0 LRB1
-LRB2 11 0 LRB2
-LRB3 13 0 LRB3
+LP1 2 0 LP1
+LP2 5 0 LP2
+LP3 8 0 LP3
+RB1 1 101 RB1
+RB2 4 104 RB2
+RB3 7 107 RB3
+LRB1 101 0 LRB1
+LRB2 104 0 LRB2
+LRB3 107 0 LRB3
 .ends

@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Author: L. Schindler
 // Version: 2.1
-// Last modification date: 3 June 2021
+// Last modification date: 23 June 2021
 // Last modification by: L. Schindler
 // ---------------------------------------------------------------------------
 
@@ -26,10 +26,10 @@ reg
   q;
 
 real
-  delay_state0_clk_q = 14.0,
-  ct_state0_clk_a = 7.1,
-  ct_state0_clk_clk = 16.8,
-  ct_state1_a_clk = 13.6;
+  delay_state0_clk_q = 14.8,
+  ct_state0_clk_a = 9.1,
+  ct_state0_clk_clk = 17.3,
+  ct_state1_a_clk = 9.5;
 
 reg
    errorsignal_a,

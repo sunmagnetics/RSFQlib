@@ -5,7 +5,7 @@
 * Last modification by: L. Schindler
 
 .control
-	back-annotate LSmitll_Always0_sync_noA_v2p1.cir
+	back-annotate LSmitll_Always0_sync_noA_v2p1_base.cir
 .endc
 
 L1 clk 1 [L1]

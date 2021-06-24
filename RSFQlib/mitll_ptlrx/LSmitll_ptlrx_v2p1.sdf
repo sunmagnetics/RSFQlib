@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Author: L. Schindler
 // Version: 2.1
-// Last modification date: 3 June 2021
+// Last modification date: 22 June 2021
 // Last modification by: L. Schindler
 // ---------------------------------------------------------------------------
 
@@ -16,8 +16,8 @@
 // ---------------------------------------------------------------------------
 (DELAYFILE
     (SDFVERSION "4.0")
-    (DESIGN "tb_LSmitll_ptlrx_v2p1")
-    (DATE "2020/06/26 16:20:15")
+    (DESIGN "tb_LSmitll_ptlrx_v2p1_optimized")
+    (DATE "2021/06/22 13:13:36")
     (VENDOR "ColdFlux")
     (PROGRAM "TimEx")
     (VERSION "2.05")
@@ -26,20 +26,20 @@
     (TEMPERATURE 3:4:5)
     (TIMESCALE 100fs)
     (CELL
-        (CELLTYPE "LSmitll_ptlrx_v2p1")
+        (CELLTYPE "LSmitll_ptlrx_v2p1_optimized")
         (INSTANCE *)
         (DELAY
             (ABSOLUTE
                 /*Conditional delays not supported by iverilog */
                 (COND internal_state_0
-                    (IOPATH a q (53:53:53))
+                    (IOPATH a q (55:55:55))
                 )
             )
         )
         /* iVerilog does not support built-in timing checks (yet) */ 
         (TIMINGCHECK
-            (HOLD a (COND internal_state_0 (posedge a)) (112))
-            (HOLD a (COND internal_state_0 (negedge a)) (112))
+            (HOLD a (COND internal_state_0 (posedge a)) (68))
+            (HOLD a (COND internal_state_0 (negedge a)) (68))
         )
     )
 )

@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Author: L. Schindler
 // Version: 2.1
-// Last modification date: 3 June 2021
+// Last modification date: 22 June 2021
 // Last modification by: L. Schindler
 // ---------------------------------------------------------------------------
 
@@ -14,7 +14,7 @@
 // (c) 2016-2018 Stellenbosch University
 // ---------------------------------------------------------------------------
 `timescale 1ps/100fs
-module LSmitll_ptlrx_v2p1 (a, q);
+module LSmitll_ptlrx_v2p1_optimized (a, q);
 
 input
   a;
@@ -26,8 +26,8 @@ reg
   q;
 
 real
-  delay_state0_a_q = 5.3,
-  ct_state0_a_a = 11.3;
+  delay_state0_a_q = 5.5,
+  ct_state0_a_a = 6.8;
 
 reg
    errorsignal_a;

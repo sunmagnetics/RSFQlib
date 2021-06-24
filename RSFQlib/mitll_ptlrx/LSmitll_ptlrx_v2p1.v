@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Author: L. Schindler
 // Version: 2.1
-// Last modification date: 3 June 2021
+// Last modification date: 22 June 2021
 // Last modification by: L. Schindler
 // ---------------------------------------------------------------------------
 
@@ -19,7 +19,7 @@
 `timescale 1ps/100fs
 
 `celldefine
-module LSmitll_ptlrx_v2p1 #(parameter begin_time = `begin_time) (a, q);
+module LSmitll_ptlrx_v2p1_optimized #(parameter begin_time = `begin_time) (a, q);
 
 // Define inputs
 input
@@ -43,9 +43,9 @@ wire
 assign internal_state_0 = state === 0;
 
 specify
-  specparam delay_state0_a_q = 5.3;
+  specparam delay_state0_a_q = 5.5;
 
-  specparam ct_state0_a_a = 11.3;
+  specparam ct_state0_a_a = 6.8;
 
   if (internal_state_0) (a => q) = delay_state0_a_q;
 
