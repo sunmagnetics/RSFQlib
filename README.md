@@ -31,7 +31,7 @@ For questions about the library, contact Lieze Schindler, lschindler@sun.ac.za
 
 -----------------------------------------------------------------------------------------
 
-This RSFQ cell library is developed under the IARPA SuperTools/ColdFlux contract via the U.S. Army Research Office grant W911NF-17-1-0120. The aim is to create a generic and open-source cell library with RSFQ logic~\cite{Likharev:RSFQ} as part of the IARPA SuperTools.
+This RSFQ cell library is developed under the IARPA SuperTools/ColdFlux contract via the U.S. Army Research Office grant W911NF-17-1-0120. The aim is to create a generic and open-source cell library with RSFQ logic as part of the IARPA SuperTools.
 
 The free and open-source tools XIC, JoSIM, JoSIM-tools, KLayout and TimEx are used to develop and test the RSFQ cells. The circuit schematics are drawn using XIC. JoSIM is used as the SPICE engine for simulating the cells, while JoSIM-tools is used for operating margin analysis as well as cell parameter optimization. KLayout is used to construct the cell layouts. TimEx is used to extract the characteristics of the cell to generate the Mealy Finite State Machine diagram and Verilog files. Icarus Verilog and GTKWave can be used to simulate and view the verilog files for each cell. Additionally, InductEx is used for impedance extraction during cell layout design. A free version of InductEx is available, but has limited capacity.
 
