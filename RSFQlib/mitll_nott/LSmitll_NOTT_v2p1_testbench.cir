@@ -1,9 +1,9 @@
 * JSIM deck file generated with TimEx
 * === DEVICE-UNDER-TEST ===
-* Back-annotated simulation file written by InductEx v.6.0.4 on 3-6-21.
+* Back-annotated simulation file written by InductEx v.6.0 on 2021/06/23.
 * Author: L. Schindler
 * Version: 2.1
-* Last modification date: 3 June 2021
+* Last modification date: 23 June
 * Last modification by: L. Schindler
 * Copyright (c) 2018-2021 Lieze Schindler, Stellenbosch University
 * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -41,17 +41,17 @@
 .param B4=1.22
 .param B5=0.77
 .param B6=1.62 
-.param B7=2.21 
+.param B7=2.6
 .param B8=1.22 
 .param B9=1.35
 .param B10=1.04 
 .param B11=1.41
 .param B12=2.5
-.param IB1=146u
+.param IB1=192u
 .param IB2=102u
-.param IB3=181u
-.param IB4=95u
-.param IB5=97u
+.param IB3=230u
+.param IB4=80u
+.param IB5=80u
 .param IB6=108u
 .param IB7=187u
 .param LB1=LB
@@ -272,6 +272,4 @@ XSINKOUTq SINKCELL 8
 XDUT lsmitll_nott 3 6 7
 .tran 0.025p 1000p 0
 .print i(L1.XDUT) p(B1.XDUT) i(L9.XDUT) p(B6.XDUT) i(L22.XDUT) p(B12.XDUT)
-.end
-
 .end
