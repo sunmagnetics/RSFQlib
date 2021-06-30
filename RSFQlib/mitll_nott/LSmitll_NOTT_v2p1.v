@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Author: L. Schindler
 // Version: 2.1
-// Last modification date: 23 June 2021
+// Last modification date: 30 June 2021
 // Last modification by: L. Schindler
 // ---------------------------------------------------------------------------
 
@@ -44,11 +44,11 @@ assign internal_state_0 = state === 0;
 assign internal_state_1 = state === 1;
 
 specify
-  specparam delay_state0_clk_q = 14.8;
+  specparam delay_state0_clk_q = 13.5;
 
-  specparam ct_state0_clk_a = 9.1;
-  specparam ct_state0_clk_clk = 17.3;
-  specparam ct_state1_a_clk = 9.5;
+  specparam ct_state0_clk_a = 8.0;
+  specparam ct_state0_clk_clk = 11.6;
+  specparam ct_state1_a_clk = 7.5;
 
   if (internal_state_0) (clk => q) = delay_state0_clk_q;
 

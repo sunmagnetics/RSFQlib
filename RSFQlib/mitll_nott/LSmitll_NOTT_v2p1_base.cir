@@ -39,24 +39,24 @@
 .param Lptl=2p
 .param LP=0.5p
 
-.param B1=1.62
+.param B1=1.26
 .param B2=1.42
 .param B3=1.72 
 .param B4=1.22
 .param B5=0.77
-.param B6=1.62 
-.param B7=2.6
-.param B8=1.22 
+.param B6=1.40
+.param B7=2.5
+.param B8=2
 .param B9=1.35
 .param B10=1.04 
 .param B11=1.41
 .param B12=2.5
 
-.param IB1=192u
-.param IB2=102u
+.param IB1=173u
+.param IB2=123u
 .param IB3=230u
-.param IB4=80u
-.param IB5=80u
+.param IB4=112u
+.param IB5=112u
 .param IB6=108u
 .param IB7=187u
 
