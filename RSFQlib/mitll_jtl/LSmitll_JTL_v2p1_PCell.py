@@ -78,6 +78,15 @@ class JTL(spira.PCell):
         elems += spira.Label(text="P2 M6 M4", position=(3.0*tp, 3.5*tp), layer=spira.Layer(number=182))
         elems += spira.Label(text="J1 M6 M5", position=(0.5*tp, 2.555*tp), layer=spira.Layer(number=182))
         elems += spira.Label(text="J2 M6 M5", position=(2.5*tp, 2.555*tp), layer=spira.Layer(number=182))
+
+        # LVS Labels
+        elems += spira.Label(text='VDD',position=(0.1325*tp,6.5*tp),layer=spira.Layer(number=1,datatype=1))
+        elems += spira.Label(text='GND',position=(0.4975*tp,6.8425*tp),layer=spira.Layer(number=40,datatype=1))
+        elems += spira.Label(text='RB1',position=(0.4975*tp,2.2675*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB2',position=(2.5025*tp,2.265*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB1',position=(1.4975*tp,3.8575*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='a',position=(0.005*tp,3.41*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='q',position=(2.995*tp,3.41*tp),layer=spira.Layer(number=60,datatype=1))
         sys.stdout.write("Constructing layout.\n")
         return elems
 

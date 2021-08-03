@@ -190,6 +190,31 @@ class PCELL(spira.PCell):
         elems += spira.Label(text="PB5 M6 M4",position=(4.5*tp,3.937*tp),layer=TEXT)
         elems += spira.Label(text="PB6 M6 M4",position=(3.0*tp,1.5*tp),layer=TEXT)
 
+        # LVS Labels
+        elems += spira.Label(text='VDD',position=(0.9075*tp,6.615*tp),layer=spira.Layer(number=1,datatype=1))
+        elems += spira.Label(text='GND',position=(1.5025*tp,6.92*tp),layer=spira.Layer(number=40,datatype=1))
+        elems += spira.Label(text='clk',position=(6.995*tp,3.4075*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='q',position=(3.4075*tp,0.005*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='a',position=(3.41*tp,6.995*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='b',position=(0.005*tp,3.4075*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='RB1',position=(3.4975*tp,5.2075*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB2',position=(3.1075*tp,5.2025*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB3',position=(2.22*tp,5.5025*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB4',position=(1.5*tp,3.79*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB5',position=(2.5*tp,3.79*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB6',position=(2.5025*tp,2.1975*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB7',position=(4*tp,3.9175*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB8',position=(5.2075*tp,3.5025*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB9',position=(5.4975*tp,2.1725*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB10',position=(4.1675*tp,2.5*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB11',position=(3.5025*tp,1.7925*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB1',position=(1.075*tp,0.495*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB2',position=(1.94*tp,6.5025*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB3',position=(1.4975*tp,2.545*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB4',position=(5.505*tp,4.4225*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB5',position=(4.4975*tp,4.51*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB6',position=(2.525*tp,1.505*tp),layer=spira.Layer(number=52,datatype=1))
+
         return elems
 
 class M6_strips(spira.Cell):

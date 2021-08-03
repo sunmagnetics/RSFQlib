@@ -1,0 +1,63 @@
+{
+	"VERSION": 0.1,
+	"LAYOUT": {
+		"FILE": "LSmitll_NOTT_v2p1.GDS",
+		"CELL": "LSmitll_NOTT_v2p1",
+		"TECHFILE": "../../mit_sfq5ee.tech",
+		"EXTRACT": {
+			"INDUCTEX-PORTS": true,
+			"LVS-LABELS": true
+		},
+		"TRANSFORM": {
+			"SHORT": ["*::L*"],
+			"REMOVE": ["*::P*"]
+		},
+		"OUTPUT": {
+			"PLOT_SVG": false,
+			"PLOT_MATLAB": false,
+			"DOT_GRAPH": true,
+			"DOT_GRAPH_PDF": true
+		}
+	},
+	"SCHEMATIC": {
+		"FILE": "LSmitll_NOTT_v2p1_base.cir",
+		"SUBCKT": "LSmitll_NOTT",
+		"FORMAT": "JOSIM",
+		"TRANSFORM": {
+			"REPLACE": { 
+				"*::IB*" : ["#::RIB#","#::VDD","#::#"]
+			},
+			"SHORT": ["*::L*"],
+			"CONNECT": ["*::0", "*::VDD"]
+		},
+		"OUTPUT": {
+			"DOT_GRAPH": true,
+			"DOT_GRAPH_PDF": true
+		}
+	},
+	"LVS" : {
+		"MAP": {
+			"NODES": {
+				"*::VDD"  				   	: "*::VDD",
+				"*::GND"  				   	: "*::0",
+				"LSmitll_NOTT_v2p1::a"    	: "LSmitll_NOTT::a",
+				"LSmitll_NOTT_v2p1::clk"    : "LSmitll_NOTT::clk",
+				"LSmitll_NOTT_v2p1::q"    	: "LSmitll_NOTT::q"
+			},
+			"DEVICES": {
+				"LSmitll_NOTT_v2p1::R#"    	: "LSmitll_NOTT::R#"
+			},
+			"POLAR_DEVICES": {
+				"LSmitll_NOTT_v2p1::J#"    	: "LSmitll_NOTT::B#"
+			}
+		}
+	},
+	"GLOBAL_SETTINGS": {
+		"PATHS": {
+			"PROG_NETLIST_EXTRACT": "inductex-gds2x",
+			"PROG_DOT": "dot",
+			"LICENSE_FILE": "ix_license.txt",
+			"OUTPUT_DIR": "lvs_output"
+		}
+	}
+}

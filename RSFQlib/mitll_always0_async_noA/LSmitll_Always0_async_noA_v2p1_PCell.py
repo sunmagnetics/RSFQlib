@@ -68,6 +68,14 @@ class PCELL(spira.PCell):
         elems += spira.Label(text='bias_in',position=(0.0*tp,6.5*tp),layer=TEXT)
         elems += spira.Label(text='q',position=(3.0*tp,3.5*tp),layer=TEXT)
 
+        # LVS Labels
+        elems += spira.Label(text='VDD',position=(0.1325*tp,6.5725*tp),layer=spira.Layer(number=1,datatype=1))
+        elems += spira.Label(text='GND',position=(0.4925*tp,6.845*tp),layer=spira.Layer(number=40,datatype=1))
+        elems += spira.Label(text='q',position=(2.995*tp,3.41*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='RIB1',position=(1.5*tp,5.5*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB1',position=(1.2075*tp,3.4975*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='R1',position=(1.5025*tp,2.5425*tp),layer=spira.Layer(number=52,datatype=1))
+
         return elems
 
 class M6_strips(spira.Cell):

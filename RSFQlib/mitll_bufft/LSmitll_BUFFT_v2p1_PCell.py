@@ -95,6 +95,18 @@ class PCELL(spira.PCell):
         elems += spira.Label(text="PB2 M6 M4",position=(2.7165*tp,2.5025*tp),layer=TEXT)
         elems += spira.Label(text="J3 M6 M5",position=(1.5*tp,1.5025*tp),layer=TEXT)
         elems += spira.Label(text="P2 M6 M4",position=(2.6235*tp,1.5005*tp),layer=TEXT)
+
+        # LVS Labels
+        elems += spira.Label(text='VDD',position=(3.5037*tp,6.8499*tp),layer=spira.Layer(number=50,datatype=1))
+        elems += spira.Label(text='GND',position=(3.6433*tp,6.8554*tp),layer=spira.Layer(number=40,datatype=1))
+        elems += spira.Label(text='RB1',position=(1.5001*tp,4.2059*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB2',position=(1.2084*tp,3.4991*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB3',position=(1.2071*tp,1.5014*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB1',position=(2.4578*tp,5.5016*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB2',position=(2.9656*tp,2.492*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RD',position=(2.7202*tp,1.504*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='a',position=(0.4999*tp,5.5039*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='q',position=(3.5011*tp,1.5028*tp),layer=spira.Layer(number=60,datatype=1))
         return elems
 
 class M6M5_strips(spira.Cell):
@@ -256,7 +268,6 @@ class resistors(spira.Cell):
 class trackblocks(spira.Cell):
     __name_prefix__ = "trackblocks"
     def create_elements(self, elems):
-        T = spira.Rotation(180)
         sys.stdout.write("Adding trackblocks.\n")
         for y in range(0, 7):
             for x in range(0, 4):

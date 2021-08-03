@@ -110,6 +110,20 @@ class PCELL(spira.PCell):
         elems += spira.Label(text='bias_in',position=(0*tp,6.5*tp),layer=TEXT)
         elems += spira.Label(text='bias_out',position=(5*tp,6.5*tp),layer=TEXT)
 
+        # LVS Labels
+        elems += spira.Label(text='VDD',position=(0.152*tp,6.57*tp),layer=spira.Layer(number=1,datatype=1))
+        elems += spira.Label(text='GND',position=(0.495*tp,6.849*tp),layer=spira.Layer(number=40,datatype=1))
+        elems += spira.Label(text='a',position=(0.004*tp,3.406*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='q0',position=(4.995*tp,3.407*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='q1',position=(3.406*tp,0.006*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='RIB1',position=(1.503*tp,4.407*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB2',position=(1.815*tp,2.509*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB3',position=(3.495*tp,5.03*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB4',position=(2.635*tp,1.497*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB1',position=(1.505*tp,3.208*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB2',position=(2.5*tp,2.202*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB3',position=(3.206*tp,3.5*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB4',position=(3.788*tp,1.513*tp),layer=spira.Layer(number=52,datatype=1))
         return elems
 
 class IX_ports(spira.Cell):

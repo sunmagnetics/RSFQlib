@@ -89,6 +89,17 @@ class PCELL(spira.PCell):
         elems += spira.Label(text='a',position=(0*tp,3.5*tp),layer=TEXT)
         elems += spira.Label(text='bias_out',position=(3*tp,6.5*tp),layer=TEXT)
         elems += spira.Label(text='bias_in',position=(0*tp,6.5*tp),layer=TEXT)
+
+        # LVS Labels
+        elems += spira.Label(text='a',position=(0.006*tp,3.407*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='q',position=(2.501*tp,2.501*tp),layer=spira.Layer(number=60,datatype=1))
+        elems += spira.Label(text='RIB1',position=(1.509*tp,4.858*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RIB2',position=(0.499*tp,1.031*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RD',position=(2.497*tp,1.813*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB1',position=(1.791*tp,3.503*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='RB2',position=(1.209*tp,1.508*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='VDD',position=(2.836*tp,6.593*tp),layer=spira.Layer(number=1,datatype=1))
+        elems += spira.Label(text='GND',position=(2.507*tp,6.84*tp),layer=spira.Layer(number=40,datatype=1))
         return elems
 
 class M0_strips(spira.Cell):

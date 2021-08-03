@@ -1,0 +1,59 @@
+{
+	"VERSION": 0.1,
+	"LAYOUT": {
+		"FILE": "LSmitll_Always0T_async_noA_v2p1.GDS",
+		"CELL": "LSmitll_Always0T_async_noA_v2p1",
+		"TECHFILE": "../../mit_sfq5ee.tech",
+		"EXTRACT": {
+			"INDUCTEX-PORTS": true,
+			"LVS-LABELS": true
+		},
+		"TRANSFORM": {
+			"SHORT": ["*::L*"],
+			"REMOVE": ["*::P*"]
+		},
+		"OUTPUT": {
+			"PLOT_SVG": false,
+			"PLOT_MATLAB": false,
+			"DOT_GRAPH": true,
+			"DOT_GRAPH_PDF": true
+		}
+	},
+	"SCHEMATIC": {
+		"FILE": "LSmitll_Always0T_async_noA_v2p1_base.cir",
+		"SUBCKT": "LSMITLL_ALWAYS0T_async_noA",
+		"FORMAT": "JOSIM",
+		"TRANSFORM": {
+			"REPLACE": { 
+				"*::IB*" : ["#::RIB#","#::VDD","#::#"]
+			},
+			"SHORT": ["*::L*"],
+			"CONNECT": ["*::0", "*::VDD"]
+		},
+		"OUTPUT": {
+			"DOT_GRAPH": true,
+			"DOT_GRAPH_PDF": true
+		}
+	},
+	"LVS" : {
+		"MAP": {
+			"NODES": {
+				"*::GND"  						   		: "*::0",
+				"LSmitll_Always0T_async_noA_v2p1::q"    : "LSMITLL_ALWAYS0T_async_noA::q"
+			},
+			"DEVICES": {
+				"LSmitll_Always0T_async_noA_v2p1::R#"   : "LSMITLL_ALWAYS0T_async_noA::R#"
+			},
+			"POLAR_DEVICES": {
+			}
+		}
+	},
+	"GLOBAL_SETTINGS": {
+		"PATHS": {
+			"PROG_NETLIST_EXTRACT": "inductex-gds2x",
+			"PROG_DOT": "dot",
+			"LICENSE_FILE": "ix_license.txt",
+			"OUTPUT_DIR": "lvs_output"
+		}
+	}
+}

@@ -43,6 +43,11 @@ class Always0T_noA(spira.PCell):
         elems += [LQ, LRQ]
         sys.stdout.write("Adding labels.\n")
         elems += spira.Label(text="q",position=(0.5*tp,0.5*tp),layer=TEXT)
+
+        # LVS Labels
+        elems += spira.Label(text='GND',position=(0.4875*tp,6.8575*tp),layer=spira.Layer(number=40,datatype=1))
+        elems += spira.Label(text='RQ',position=(0.5025*tp,1.6121*tp),layer=spira.Layer(number=52,datatype=1))
+        elems += spira.Label(text='q',position=(0.505*tp,0.505*tp),layer=spira.Layer(number=60,datatype=1))
         sys.stdout.write("Constructing layout.\n")
         return elems
 

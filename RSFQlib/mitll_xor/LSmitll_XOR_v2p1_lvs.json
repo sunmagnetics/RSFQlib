@@ -1,0 +1,64 @@
+{
+	"VERSION": 0.1,
+	"LAYOUT": {
+		"FILE": "LSmitll_XOR_v2p1.GDS",
+		"CELL": "LSmitll_XOR_v2p1",
+		"TECHFILE": "../../mit_sfq5ee.tech",
+		"EXTRACT": {
+			"INDUCTEX-PORTS": true,
+			"LVS-LABELS": true
+		},
+		"TRANSFORM": {
+			"SHORT": ["*::L*"],
+			"REMOVE": ["*::P*"]
+		},
+		"OUTPUT": {
+			"PLOT_SVG": false,
+			"PLOT_MATLAB": false,
+			"DOT_GRAPH": true,
+			"DOT_GRAPH_PDF": true
+		}
+	},
+	"SCHEMATIC": {
+		"FILE": "LSmitll_XOR_v2p1_base.cir",
+		"SUBCKT": "LSmitll_XOR",
+		"FORMAT": "JOSIM",
+		"TRANSFORM": {
+			"REPLACE": { 
+				"*::IB*" : ["#::RIB#","#::VDD","#::#"]
+			},
+			"SHORT": ["*::L*"],
+			"CONNECT": ["*::0", "*::VDD"]
+		},
+		"OUTPUT": {
+			"DOT_GRAPH": true,
+			"DOT_GRAPH_PDF": true
+		}
+	},
+	"LVS" : {
+		"MAP": {
+			"NODES": {
+				"*::VDD"  					: "*::VDD",
+				"*::GND"  					: "*::0",
+				"LSmitll_XOR_v2p1::a"		: "LSmitll_XOR::a",
+				"LSmitll_XOR_v2p1::b"		: "LSmitll_XOR::b",
+				"LSmitll_XOR_v2p1::clk"		: "LSmitll_XOR::clk",
+				"LSmitll_XOR_v2p1::q"		: "LSmitll_XOR::q"
+			},
+			"DEVICES": {
+				"LSmitll_XOR_v2p1::R#"    : "LSmitll_XOR::R#"
+			},
+			"POLAR_DEVICES": {
+				"LSmitll_XOR_v2p1::J#"    : "LSmitll_XOR::B#"
+			}
+		}
+	},
+	"GLOBAL_SETTINGS": {
+		"PATHS": {
+			"PROG_NETLIST_EXTRACT": "inductex-gds2x",
+			"PROG_DOT": "dot",
+			"LICENSE_FILE": "ix_license.txt",
+			"OUTPUT_DIR": "lvs_output"
+		}
+	}
+}
