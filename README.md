@@ -1,6 +1,6 @@
 Author: L. Schindler
-Version: 2.1
-Release date: 11 June 2021
+Version: 2.1.1
+Release date: 24 August 2021
 
 -----------------------------------------------------------------------------------------
 
