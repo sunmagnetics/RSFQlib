@@ -1,0 +1,35 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 3.0
+* Last modification date: 9 August 2022
+* Last modification by: T. Hall
+
+.control
+	back-annotate THmitll_DCSFQ-PTLTX_v3p0_base.cir
+.endc
+
+* Inductors
+L1 a 1 1p [L1] 
+L2 1 0 3.9p [L2]
+L3 1 2 0.6p [L3]
+L4 3 5 1.1p [L4]
+L5 5 7 4.5952p [L5]
+L6 7 9 2.0678p [L6]
+L7 9 11 2.0678p [L7] 
+L8 11 q [L8] 
+LP2 6 0 [LP2] 
+LP3 8 0 [LP3] 
+LP4 12 0 [LP4]
+LB1 bias1 3 [LB1]
+LB2 bias2 9 [LB2]
+
+* Ports
+P1 a 0
+P2 q 0
+PB1 bias1 0
+PB2 bias2 0
+J1 2 3		225u
+J2 5 6 		225u
+J3 7 8		250u
+J4 11 12	250u
+.end

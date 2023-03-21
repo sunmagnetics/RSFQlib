@@ -1,0 +1,89 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: T. Hall
+* Version: 3.0
+* Last modification date: 6 September 2022
+* Last modification by: T. Hall
+
+.control
+	back-annotate THmitll_XNOR_v3p0_optimised.cir
+.endc
+
+* Inductors
+L1 a 1 1.4696p [L1] 
+L2 1 4 2.7700p [L2] 
+L3 6 7 3.6981p [L3]  
+L4 b 8 1.4696p [L4] 
+L5 8 11 2.7700p [L5] 
+L6 7 13 3.6981p [L6] 
+L7 15 16 6.0060p [L7] 
+L8 clk 18 1.5890p [L8] 
+L9 18 21 1.8231p [L9] 
+L10 21 22 1.6294p [L10] 
+L11 16 23 4.5825p [L11] 
+L12 23 26 3.3983p [L12] 
+L13 27 29 1.1575p [L13] 
+L14 31 27 3.0580p [L14] 
+L15 21 33 2.1812p [L15] 
+L16 33 36 4.5604p [L16] 
+L17 36 32 2.9745p [L17] 
+L18 38 30 0.8577p [L18] 
+L19 30 40 3.5636p [L19] 
+L20 40 q 1.5943p [L20] 
+
+LB1 3 1 [LB1] 
+LB2 10 8 [LB2] 
+LB3 14 7 [LB3] 
+LB4 20 18 [LB4] 
+LB5 25 23 [LB5] 
+LB6 27 28 [LB6] 
+LB7 35 33 [LB7] 
+LB8 42 40 [LB8] 
+
+LP1 2 0 [LP1] 
+LP2 5 0 [LP2] 
+LP4 9 0 [LP4] 
+LP5 12 0 [LP5] 
+LP8 17 0 [LP8] 
+LP9 19 0 [LP9] 
+LP11 24 0 [LP11] 
+LP15 34 0 [LP15] 
+LP16 37 0 [LP16] 
+LP18 39 0 [LP18] 
+LP19 41 0 [LP19] 
+
+* Ports
+P1 a 0
+P2 b 0
+P3 clk 0
+P4 q 0
+
+J1 1 2 250u
+J2 4 5 222u
+J3 4 6 212u 
+J4 8 9 250u
+J5 11 12 222u
+J6 11 13 212u
+J7 7 15 139u
+J8 16 17 157u
+J9 18 19 250u
+J10 22 16 128u
+J11 23 24 243u
+J12 26 27 77u
+J13 29 30 72u
+J14 32 31 134u
+J15 33 34 163u
+J16 36 37 215u
+J17 32 38 105u
+J18 30 39 83u
+J19 40 41 250u
+
+PB1 3 0
+PB2 10 0
+PB3 14 0
+PB4 20 0
+PB5 25 0
+PB6 28 0
+PB7 35 0
+PB8 42 0
+
+.end

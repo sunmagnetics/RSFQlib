@@ -1,0 +1,142 @@
+* Back-annotated simulation file written by InductEx v.6.1.52 on 2022/08/02.
+* Author: L. Schindler
+* Version: 3.0
+* Last modification date: 1 August 2022
+* Last modification by: T. Hall
+
+* Copyright (c) 2018-2022 Lieze Schindler, Tessa Hall, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+* For questions about the library, contact Tessa Hall, 19775539@sun.ac.za.
+
+* The cell is not designed to be connected directly to passive transmission lines.
+
+*$Ports 	a	clk	q
+.subckt THmitll_DFF a clk q
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param Phi0=2.067833848E-15
+.param B0=1
+.param Ic0=0.0001
+.param IcRs=100u*6.859904418
+.param B0Rs=IcRs/Ic0*B0
+.param Rsheet=2 
+.param Lsheet=1.13e-12 
+.param LP=0.5p
+.param IC=2.5
+.param LB=2p
+.param BiasCoef=0.7
+
+.param B1=2.5
+.param B2=1.67
+.param B3=2.32
+.param B4=2.02
+.param B5=2.5
+.param B6=1.69
+.param B7=2.5
+
+.param IB1=175u        
+.param IB2=222u          
+.param IB3=175u             
+.param IB4=175u  
+       
+.param LB1=LB           
+.param LB2=LB          
+.param LB3=LB           
+.param LB4=LB 
+             
+.param L1=1.9553p               
+.param L2=3.8899p         
+.param L3=8.6023p      
+.param L4=2.0461p       
+.param L5=3.8124p     
+.param L6=4.6626p       
+.param L7=1.8248p 
+
+.param LP1=LP         
+.param LP3=LP          
+.param LP4=LP         
+.param LP5=LP          
+.param LP7=LP  
+        
+.param RB1=B0Rs/B1       
+.param RB2=B0Rs/B2       
+.param RB3=B0Rs/B3          
+.param RB4=B0Rs/B4         
+.param RB5=B0Rs/B5         
+.param RB6=B0Rs/B6          
+.param RB7=B0Rs/B7
+
+.param LRB1=(RB1/Rsheet)*Lsheet+LP
+.param LRB2=(RB2/Rsheet)*Lsheet
+.param LRB3=(RB3/Rsheet)*Lsheet+LP
+.param LRB4=(RB4/Rsheet)*Lsheet+LP
+.param LRB5=(RB5/Rsheet)*Lsheet+LP
+.param LRB6=(RB6/Rsheet)*Lsheet
+.param LRB7=(RB7/Rsheet)*Lsheet+LP
+
+B1 1 2 jjmit  area=B1 
+B2 4 5 jjmit  area=B2 
+B3 5 6 jjmit  area=B3 
+B4 8 9 jjmit  area=B4 
+B5 10 11 jjmit  area=B5 
+B6 13 8 jjmit  area=B6 
+B7 14 15 jjmit  area=B7 
+
+IB1 0 3 pwl(0 0 5p IB1)
+IB2 0 7 pwl(0 0 5p IB2)
+IB3 0 12 pwl(0 0 5p IB3)
+IB4 0 16 pwl(0 0 5p IB4)
+
+LB1 3 1 LB1 
+LB2 7 5 LB2 
+LB3 12 10 LB3 
+LB4 16 14 LB4 
+
+L1 a 1 1.948E-012 
+L2 1 4 3.879E-012 
+L3 5 8 8.641E-012 
+L4 clk 10 2.035E-012 
+L5 10 13 3.799E-012 
+L6 8 14 4.675E-012 
+L7 14 q 1.809E-012 
+
+LP1 2 0 3.511E-013 
+LP3 6 0 3.717E-013 
+LP4 9 0 4.668E-013 
+LP5 11 0 4.339E-013 
+LP7 15 0 4.147E-013 
+
+RB1 1 101 RB1  
+LRB1 101 0 LRB1 
+RB2 4 104 RB2  
+LRB2 104 5 LRB2 
+RB3 5 105 RB3  
+LRB3 105 0 LRB3 
+RB4 8 108 RB4  
+LRB4 108 0 LRB4 
+RB5 10 110 RB5  
+LRB5 110 0 LRB5 
+RB6 13 113 RB6  
+LRB6 113 8 LRB6 
+RB7 14 114 RB7  
+LRB7 114 0 LRB7 
+
+.ends
+

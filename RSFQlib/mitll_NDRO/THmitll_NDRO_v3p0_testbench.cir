@@ -1,0 +1,331 @@
+* JSIM deck file generated with TimEx
+* === DEVICE-UNDER-TEST ===
+* Back-annotated simulation file written by InductEx v.6.1.52 on 2022/09/01.
+* Author: L. Schindler
+* Version: 3.0
+* Last modification date: 30 August 2022
+* Last modification by: T. Hall
+* Copyright (c) 2018-2022 Lieze Schindler, Tessa Hall, Stellenbosch University
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+* For questions about the library, contact Tessa Hall, 19775539@sun.ac.za.
+* The cell is not designed to be connected directly to passive transmission lines.
+*$Ports  a b clk q
+.subckt THmitll_NDRO a b clk q
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param Phi0=2.067833848E-15
+.param B0=1
+.param Ic0=0.0001
+.param IcRs=100u*6.859904418
+.param B0Rs=IcRs/Ic0*B0
+.param Rsheet=2 
+.param Lsheet=1.13e-12 
+.param LP=0.5p
+.param IC=2.5
+.param LB=2p
+.param BiasCoef=0.7
+.param B1=2.5
+.param B2=1.80
+.param B3=2.01
+.param B4=2.5
+.param B5=1.64
+.param B6=2.58
+.param B7=0.90
+.param B8=2.30
+.param B9=2.5
+.param B10=1.77
+.param B11=2.5
+.param IB1=175u
+.param IB2=139u
+.param IB3=175u
+.param IB4=158u
+.param IB5=175u
+.param IB6=175u
+.param LB1=LB
+.param LB2=LB
+.param LB3=LB
+.param LB4=LB
+.param LB5=LB
+.param LB6=LB
+.param L1=1.8663p
+.param L2=3.1100p
+.param L3=2.8212p
+.param L4=1.7117p
+.param L5=2.7767p
+.param L6=3.6623p
+.param L7=1.4501p
+.param L8=2.0153p
+.param L9=1.3783p
+.param L10=3.2508p
+.param L11=3.3341p
+.param L12=1.6989p
+.param LP1=LP
+.param LP3=LP
+.param LP4=LP
+.param LP6=LP
+.param LP8=LP
+.param LP9=LP
+.param LP11=LP
+.param RB1=B0Rs/B1
+.param RB2=B0Rs/B2
+.param RB3=B0Rs/B3
+.param RB4=B0Rs/B4
+.param RB5=B0Rs/B5
+.param RB6=B0Rs/B6
+.param RB7=B0Rs/B7
+.param RB8=B0Rs/B8
+.param RB9=B0Rs/B9
+.param RB10=B0Rs/B10
+.param RB11=B0Rs/B11
+.param LRB1=(RB1/Rsheet)*Lsheet+LP
+.param LRB2=(RB2/Rsheet)*Lsheet
+.param LRB3=(RB3/Rsheet)*Lsheet+LP
+.param LRB4=(RB4/Rsheet)*Lsheet+LP
+.param LRB5=(RB5/Rsheet)*Lsheet
+.param LRB6=(RB6/Rsheet)*Lsheet+LP
+.param LRB7=(RB7/Rsheet)*Lsheet
+.param LRB8=(RB8/Rsheet)*Lsheet+LP
+.param LRB9=(RB9/Rsheet)*Lsheet+LP
+.param LRB10=(RB10/Rsheet)*Lsheet
+.param LRB11=(RB11/Rsheet)*Lsheet+LP
+B1 1 2 jjmit  area=B1 
+B2 4 5 jjmit  area=B2 
+B3 5 6 jjmit  area=B3 
+B4 9 10 jjmit  area=B4 
+B5 12 13 jjmit  area=B5 
+B6 13 14 jjmit  area=B6 
+B7 8 15 jjmit  area=B7 
+B8 18 19 jjmit  area=B8 
+B9 20 21 jjmit  area=B9 
+B10 23 18 jjmit  area=B10 
+B11 24 25 jjmit  area=B11 
+IB1 0 3 pwl(0 0 5p IB1)
+IB2 0 7 pwl(0 0 5p IB2)
+IB3 0 11 pwl(0 0 5p IB3)
+IB4 0 17 pwl(0 0 5p IB4)
+IB5 0 22 pwl(0 0 5p IB5)
+IB6 0 26 pwl(0 0 5p IB6)
+LB1 3 1 7.35E-013 
+LB2 7 5 7.798E-013 
+LB3 11 9 1.023E-012 
+LB4 17 16 1.981E-012 
+LB5 22 20 6.382E-013 
+LB6 26 24 1.181E-012 
+L1 a 1 1.861E-012 
+L2 1 4 3.103E-012 
+L3 5 8 2.808E-012 
+L4 b 9 1.712E-012 
+L5 9 12 2.775E-012 
+L6 13 8 3.652E-012 
+L7 15 16 1.455E-012 
+L8 16 18 2.018E-012 
+L9 clk 20 1.37E-012 
+L10 20 23 3.239E-012 
+L11 18 24 3.321E-012 
+L12 24 q 1.698E-012 
+LP1 2 0 4.356E-013 
+LP3 6 0 4.322E-013 
+LP4 10 0 3.473E-013 
+LP6 14 0 3.698E-013 
+LP8 19 0 4.794E-013 
+LP9 21 0 3.788E-013 
+LP11 25 0 4.491E-013 
+RB1 1 101 RB1  
+LRB1 101 0 LRB1 
+RB2 4 104 RB2  
+LRB2 104 5 LRB2 
+RB3 5 105 RB3  
+LRB3 105 0 LRB3 
+RB4 9 109 RB4  
+LRB4 109 0 LRB4 
+RB5 12 112 RB5  
+LRB5 112 13 LRB5 
+RB6 13 113 RB6  
+LRB6 113 0 LRB6
+RB7 8 108 RB7  
+LRB7 108 15 LRB7 
+RB8 18 118 RB8  
+LRB8 118 0 LRB8 
+RB9 20 120 RB9  
+LRB9 120 0 LRB9 
+RB10 23 123 RB10  
+LRB10 123 18 LRB10 
+RB11 24 124 RB11  
+LRB11 124 0 LRB11 
+.ends
+* === SOURCE DEFINITION ===
+.SUBCKT SOURCECELL  a q
+.model jjmit jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160, rn=16, icrit=0.1ma)
+.param phi0=2.067833848e-15
+.param b0=1
+.param ic0=0.0001
+.param icrs=100u*6.859904418
+.param b0rs=icrs/ic0*b0
+.param rsheet=2
+.param lsheet=1.13e-12
+.param lp=0.5p
+.param ic=2.5
+.param lb=2p
+.param biascoef=0.7
+.param b1=2.25
+.param b2=2.25
+.param b3=ic
+.param ib1=275u
+.param ib2=b3*ic0*biascoef
+.param lb1=lb
+.param lb2=lb
+.param l1=1p
+.param l2=3.9p
+.param l3=0.6p
+.param l4=1.1p
+.param l5=4.5p
+.param l6=phi0/(4*ic*ic0)
+.param lp2=lp
+.param lp3=lp
+.param rb1=b0rs/b1
+.param rb2=b0rs/b2
+.param rb3=b0rs/b3
+.param lrb1=(rb1/rsheet)*lsheet
+.param lrb2=(rb2/rsheet)*lsheet+lp
+.param lrb3=(rb3/rsheet)*lsheet+lp
+b1 2 3 jjmit  area=b1
+b2 5 6 jjmit  area=b2
+b3 7 8 jjmit  area=b3
+ib1 0 4 pwl(0 0 5p ib1)
+ib2 0 9 pwl(0 0 5p ib2)
+lb1 4 3 2.825e-012
+lb2 9 7 2.942e-012
+l1 a 1 1.672e-012
+l2 1 0 3.901e-012
+l3 1 2 5.953e-013
+l4 3 5 1.1e-012
+l5 5 7 4.542e-012
+l6 7 q 2.012e-012
+lp2 6 0 3.924e-013
+lp3 8 0 3.841e-013
+rb1 2 102 rb1
+lrb1 102 3 lrb1
+rb2 5 105 rb2
+lrb2 105 0 lrb2
+rb3 7 107 rb3
+lrb3 107 0 lrb3
+.ENDS SOURCECELL
+* === INPUT LOAD DEFINITION ===
+.SUBCKT LOADINCELL  a q
+.model jjmit jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160, rn=16, icrit=0.1ma)
+.param phi0=2.067833848e-15
+.param b0=1
+.param ic0=0.0001
+.param icrs=100u*6.859904418
+.param b0rs=icrs/ic0*b0
+.param rsheet=2
+.param lsheet=1.13e-12
+.param lp=0.5p
+.param ic=2.5
+.param lb=2p
+.param biascoef=0.7
+.param b1=ic
+.param b2=ic
+.param ib1=(b1+b2)*ic0*biascoef
+.param lb1=lb
+.param l1=phi0/(4*b1*ic0)
+.param l2=phi0/(4*b1*ic0)
+.param l3=phi0/(4*b2*ic0)
+.param l4=phi0/(4*b2*ic0)
+.param lp1=lp
+.param lp2=lp
+.param rb1=b0rs/b1
+.param rb2=b0rs/b2
+.param lrb1=(rb1/rsheet)*lsheet+lp
+.param lrb2=(rb2/rsheet)*lsheet+lp
+b1 1 2 jjmit  area=b1
+b2 5 6 jjmit  area=b2
+ib1 0 4 pwl(0 0 5p ib1)
+lb1 4 3 2.336e-012
+l1 a 1 2.07e-012
+l2 1 3 2.088e-012
+l3 3 5 2.082e-012
+l4 5 q 2.072e-012
+lp1 2 0 3.137e-013
+lp2 6 0 3.123e-013
+rb1 1 101 rb1
+lrb1 101 0 lrb1
+rb2 5 105 rb2
+lrb2 105 0 lrb2
+.ENDS LOADINCELL
+* === OUTPUT LOAD DEFINITION ===
+.SUBCKT LOADOUTCELL  a q
+.model jjmit jj(rtype=1, vg=2.8mv, cap=0.07pf, r0=160, rn=16, icrit=0.1ma)
+.param phi0=2.067833848e-15
+.param b0=1
+.param ic0=0.0001
+.param icrs=100u*6.859904418
+.param b0rs=icrs/ic0*b0
+.param rsheet=2
+.param lsheet=1.13e-12
+.param lp=0.5p
+.param ic=2.5
+.param lb=2p
+.param biascoef=0.7
+.param b1=ic
+.param b2=ic
+.param ib1=(b1+b2)*ic0*biascoef
+.param lb1=lb
+.param l1=phi0/(4*b1*ic0)
+.param l2=phi0/(4*b1*ic0)
+.param l3=phi0/(4*b2*ic0)
+.param l4=phi0/(4*b2*ic0)
+.param lp1=lp
+.param lp2=lp
+.param rb1=b0rs/b1
+.param rb2=b0rs/b2
+.param lrb1=(rb1/rsheet)*lsheet+lp
+.param lrb2=(rb2/rsheet)*lsheet+lp
+b1 1 2 jjmit  area=b1
+b2 5 6 jjmit  area=b2
+ib1 0 4 pwl(0 0 5p ib1)
+lb1 4 3 2.336e-012
+l1 a 1 2.07e-012
+l2 1 3 2.088e-012
+l3 3 5 2.082e-012
+l4 5 q 2.072e-012
+lp1 2 0 3.137e-013
+lp2 6 0 3.123e-013
+rb1 1 101 rb1
+lrb1 101 0 lrb1
+rb2 5 105 rb2
+lrb2 105 0 lrb2
+.ENDS LOADOUTCELL
+* === SINK DEFINITION ===
+.SUBCKT SINKCELL  1
+r1 1 0 2
+.ENDS SINKCELL
+* ===== MAIN =====
+I_a 0 1 pwl(0 0 150p 0 153p 600u 156p 0 250p 0 253p 600u 256p 0 280p 0 283p 600u 286p 0 540p 0 543p 600u 546p 0 600p 0 603p 600u 606p 0 640p 0 643p 600u 646p 0 780p 0 783p 600u 786p 0)
+XSOURCEINa SOURCECELL 1 2
+XLOADINa LOADINCELL 2 3
+I_b 0 4 pwl(0 0 350p 0 353p 600u 356p 0 450p 0 453p 600u 456p 0 480p 0 483p 600u 486p 0 560p 0 563p 600u 566p 0 580p 0 583p 600u 586p 0 660p 0 663p 600u 666p 0 740p 0 743p 600u 746p 0)
+XSOURCEINb SOURCECELL 4 5
+XLOADINb LOADINCELL 5 6
+I_clk 0 7 pulse(0 600u 20p 2p 2p 1p 100p)
+XSOURCEINclk SOURCECELL 7 8
+XLOADINclk LOADINCELL 8 9
+XLOADOUTq LOADOUTCELL 10 11
+XSINKOUTq SINKCELL 11
+XDUT THmitll_NDRO 3 6 9 10
+.tran 0.025p 1000p 0
+.print i(L1.XDUT) p(B1.XDUT) i(L4.XDUT) p(B4.XDUT) i(L9.XDUT) p(B9.XDUT) p(B11.XDUT) p(B1.XLOADOUTq) 
+.end

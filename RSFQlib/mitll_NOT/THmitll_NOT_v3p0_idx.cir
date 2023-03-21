@@ -1,0 +1,53 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: T. Hall
+* Version: 3.0
+* Last modification date: 25 August 2022
+* Last modification by: T. Hall
+
+.control
+	back-annotate THmitll_NOT_v3p0_optimised.cir
+.endc
+
+*Inductors
+L1 a 1 0.8555p [L1]
+L2 1 4 2.7537p [L2]
+L3 5 7 0.7553p [L3]
+L4 5 9 7.3609p [L4]
+L5 clk 11 0.8585p [L5]
+L6 11 10 3.0349p [L6]
+L7 8 14 0.9373p [L7]
+L8 8 16 4.2782p [L8]
+L9 16 q 0.9209p [L9]
+
+LP1 2 0 [LP1]
+LP5 12 0 [LP5]
+LP7 15 0 [LP7]
+LP8 17 0 [LP8]
+
+LB1 3 1 [LB1]
+LB2 6 5 [LB2]
+LB3 13 11 [LB3]
+LB4 18 16 [LB4]
+
+*Ports
+
+P1 a 0
+P2 clk 0
+P3 q 0
+
+J1 1 2 250u
+J2 4 5 78u
+J3 7 8 85u
+J4 9 10 269u
+J5 11 12 250u
+J6 10 14 142u
+J7 8 15 101u
+J8 16 17 250u
+
+PB1 3 0
+PB2 6 0
+PB3 13 0
+PB4 18 0
+
+.end
+

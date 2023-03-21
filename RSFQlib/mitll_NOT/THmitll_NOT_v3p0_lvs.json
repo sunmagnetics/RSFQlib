@@ -1,0 +1,12 @@
+{
+	"IMPORT": ["../../tech/lvs_default_settings.json"],
+	"LAYOUT": {
+		"FILE": "THmitll_NOT_v3p0.GDS",
+		"CELL": "THmitll_NOT_v3p0"
+	},
+	"SCHEMATIC": {
+		"FILE": "THmitll_NOT_v3p0_base.cir",
+		"SUBCKT": "THmitll_NOT"
+	},
+	"SETTINGS": { "PATHS": { "OUTPUT_DIR": "lvs/THmitll_NOT" } }
+}

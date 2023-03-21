@@ -1,0 +1,31 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 3.0
+* Last modification date: 10 August 2022
+* Last modification by: T. Hall
+
+.control
+	back-annotate THmitll_JTLT_v3p0_optimised.cir
+.endc
+
+* Inductors
+L1 a 1 [L1] 
+L2 1 4 8.2192p [L2]
+L3 4 6 1.4265p [L3]
+L4 6 8 2.2384p [L4]
+L5 8 q [L5]
+LP1 2 0 [LP1] 
+LP2 5 0 [LP2] 
+LP3 9 0 [LP3]
+LB1 3 1 [LB1]
+LB2 7 6 [LB2]
+
+* Ports
+P1 a 0
+P2 q 0
+PB1 3 0
+PB2 7 0
+J1 1 2		160u
+J2 4 5 		81u
+J3 8 9		250u
+.end

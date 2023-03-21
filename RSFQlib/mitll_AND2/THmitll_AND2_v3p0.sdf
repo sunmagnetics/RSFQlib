@@ -1,0 +1,52 @@
+// ---------------------------------------------------------------------------
+// Standard Delay Format file, (IEEE Std 1497-2001) created with
+// TimEx v2.05
+// Timing description and structural design for IARPA-BAA-14-03 via
+// U.S. Air Force Research Laboratory contract FA8750-15-C-0203 and
+// IARPA-BAA-16-03 via U.S. Army Research Office grant W911NF-17-1-0120.
+// For questions about TimEx, contact CJ Fourie, coenrad@sun.ac.za
+// (c) 2016-2018 Stellenbosch University
+// ---------------------------------------------------------------------------
+(DELAYFILE
+    (SDFVERSION "4.0")
+    (DESIGN "tb_THmitll_AND2_v3p0_extracted")
+    (DATE "8/9/2022 3:42:08 PM")
+    (VENDOR "ColdFlux")
+    (PROGRAM "TimEx")
+    (VERSION "2.05")
+    (DIVIDER .)
+    (PROCESS "typical")         // For documentation purposes only.
+    (TEMPERATURE 3:4:5)
+    (TIMESCALE 100fs)
+    (CELL
+        (CELLTYPE "THmitll_AND2_v3p0_extracted")
+        (INSTANCE *)
+        (DELAY
+            (ABSOLUTE
+                /*Conditional delays not supported by iverilog */
+                (COND internal_state_3
+                    (IOPATH clk q (50:50:50))
+                )
+            )
+        )
+        /* iVerilog does not support built-in timing checks (yet) */ 
+        (TIMINGCHECK
+            (HOLD a (COND internal_state_0 (posedge clk)) (12))
+            (HOLD a (COND internal_state_0 (negedge clk)) (12))
+            (HOLD b (COND internal_state_0 (posedge clk)) (12))
+            (HOLD b (COND internal_state_0 (negedge clk)) (12))
+            (HOLD a (COND internal_state_1 (posedge clk)) (16))
+            (HOLD a (COND internal_state_1 (negedge clk)) (16))
+            (HOLD b (COND internal_state_1 (posedge clk)) (10))
+            (HOLD b (COND internal_state_1 (negedge clk)) (10))
+            (HOLD a (COND internal_state_2 (posedge clk)) (10))
+            (HOLD a (COND internal_state_2 (negedge clk)) (10))
+            (HOLD b (COND internal_state_2 (posedge clk)) (16))
+            (HOLD b (COND internal_state_2 (negedge clk)) (16))
+            (HOLD a (COND internal_state_3 (posedge clk)) (7))
+            (HOLD a (COND internal_state_3 (negedge clk)) (7))
+            (HOLD b (COND internal_state_3 (posedge clk)) (7))
+            (HOLD b (COND internal_state_3 (negedge clk)) (7))
+        )
+    )
+)

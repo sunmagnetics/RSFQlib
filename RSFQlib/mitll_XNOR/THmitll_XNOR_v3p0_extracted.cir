@@ -1,0 +1,265 @@
+* Back-annotated simulation file written by InductEx v.6.1.52 on 2022/09/07.
+* Author: L. Schindler
+* Version: 3.0
+* Last modification date: 6 September 2022
+* Last modification by: T. Hall
+
+* Copyright (c) 2018-2022 Lieze Schindler, Tessa Hall, Stellenbosch University
+
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this cell library and associated documentation files (the "Library"), to deal
+* in the Library without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Library, and to permit persons to whom the Library is
+* furnished to do so, subject to the following conditions:
+
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Library.
+
+* THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE LIBRARY OR THE USE OR OTHER DEALINGS IN THE
+* LIBRARY.
+
+*For questions about the library, contact Tessa Hall, 19775539@sun.ac.za
+
+*$Ports 	a	b	clk	q
+.subckt THmitll_XNOR a b clk q
+.model jjmit jj(rtype=1, vg=2.8mV, cap=0.07pF, r0=160, rn=16, icrit=0.1mA)
+.param Phi0=2.067833848E-15
+.param B0=1
+.param Ic0=0.0001
+.param IcRs=100u*6.859904418
+.param B0Rs=IcRs/Ic0*B0
+.param Rsheet=2 
+.param Lsheet=1.13e-12 
+.param LP=0.5p
+.param IC=2.5
+.param LB=2p
+.param BiasCoef=0.7
+
+.param B1=2.5
+.param B2=2.22
+.param B3=2.12
+.param B4=2.5
+.param B5=2.22
+.param B6=2.12
+.param B7=1.39
+.param B8=1.57
+.param B9=2.5
+.param B10=1.28
+.param B11=2.43
+.param B12=0.77
+.param B13=0.72
+.param B14=1.34
+.param B15=1.63
+.param B16=2.15
+.param B17=1.05
+.param B18=0.83
+.param B19=2.5
+
+.param IB1=175u
+.param IB2=175u
+.param IB3=207u
+.param IB4=175u
+.param IB5=193u
+.param IB6=147u
+.param IB7=122u
+.param IB8=175u
+
+.param LB1=LB
+.param LB2=LB
+.param LB3=LB
+.param LB4=LB
+.param LB5=LB
+.param LB6=LB
+.param LB7=LB
+.param LB8=LB
+
+.param L1=1.4696p
+.param L2=2.7700p
+.param L3=3.6981p
+.param L4=1.4696p
+.param L5=2.7700p
+.param L6=3.6981p
+.param L7=6.0060p
+.param L8=1.5890p
+.param L9=1.8231p
+.param L10=1.6294p
+.param L11=4.5825p
+.param L12=3.3983p
+.param L13=1.1575p
+.param L14=3.0580p
+.param L15=2.1812p
+.param L16=4.5604p
+.param L17=2.9745p
+.param L18=0.8577p
+.param L19=3.5636p
+.param L20=1.5943p
+
+.param LP1=LP
+.param LP2=LP
+.param LP4=LP
+.param LP5=LP
+.param LP8=LP
+.param LP9=LP
+.param LP11=LP
+.param LP15=LP
+.param LP16=LP
+.param LP18=LP
+.param LP19=LP
+
+.param RB1=B0Rs/B1       
+.param RB2=B0Rs/B2       
+.param RB3=B0Rs/B3          
+.param RB4=B0Rs/B4         
+.param RB5=B0Rs/B5         
+.param RB6=B0Rs/B6          
+.param RB7=B0Rs/B7
+.param RB8=B0Rs/B8         
+.param RB9=B0Rs/B9         
+.param RB10=B0Rs/B10
+.param RB11=B0Rs/B11
+.param RB12=B0Rs/B12
+.param RB13=B0Rs/B13
+.param RB14=B0Rs/B14
+.param RB15=B0Rs/B15
+.param RB16=B0Rs/B16
+.param RB17=B0Rs/B17
+.param RB18=B0Rs/B18
+.param RB19=B0Rs/B19
+
+.param LRB1=(RB1/Rsheet)*Lsheet+LP
+.param LRB2=(RB2/Rsheet)*Lsheet+LP
+.param LRB3=(RB3/Rsheet)*Lsheet
+.param LRB4=(RB4/Rsheet)*Lsheet+LP
+.param LRB5=(RB5/Rsheet)*Lsheet+LP
+.param LRB6=(RB6/Rsheet)*Lsheet
+.param LRB7=(RB7/Rsheet)*Lsheet
+.param LRB8=(RB8/Rsheet)*Lsheet+LP
+.param LRB9=(RB9/Rsheet)*Lsheet+LP
+.param LRB10=(RB10/Rsheet)*Lsheet
+.param LRB11=(RB11/Rsheet)*Lsheet+LP
+.param LRB12=(RB12/Rsheet)*Lsheet
+.param LRB13=(RB13/Rsheet)*Lsheet
+.param LRB14=(RB14/Rsheet)*Lsheet
+.param LRB15=(RB15/Rsheet)*Lsheet+LP
+.param LRB16=(RB16/Rsheet)*Lsheet+LP
+.param LRB17=(RB17/Rsheet)*Lsheet
+.param LRB18=(RB18/Rsheet)*Lsheet+LP
+.param LRB19=(RB19/Rsheet)*Lsheet+LP
+
+B1 1 2 jjmit  area=B1 
+B2 4 5 jjmit  area=B2 
+B3 4 6 jjmit  area=B3 
+B4 8 9 jjmit  area=B4 
+B5 11 12 jjmit  area=B5 
+B6 11 13 jjmit  area=B6 
+B7 7 15 jjmit  area=B7 
+B8 16 17 jjmit  area=B8 
+B9 18 19 jjmit  area=B9 
+B10 22 16 jjmit  area=B10 
+B11 23 24 jjmit  area=B11 
+B12 26 27 jjmit  area=B12 
+B13 29 30 jjmit  area=B13 
+B14 32 31 jjmit  area=B14 
+B15 33 34 jjmit  area=B15 
+B16 36 37 jjmit  area=B16 
+B17 32 38 jjmit  area=B17 
+B18 30 39 jjmit  area=B18 
+B19 40 41 jjmit  area=B19 
+
+IB1 0 3 pwl(0 0 5p IB1)
+IB2 0 10 pwl(0 0 5p IB2)
+IB3 0 14 pwl(0 0 5p IB3)
+IB4 0 20 pwl(0 0 5p IB4)
+IB5 0 25 pwl(0 0 5p IB5)
+IB6 0 28 pwl(0 0 5p IB6)
+IB7 0 35 pwl(0 0 5p IB7)
+IB8 0 42 pwl(0 0 5p IB8)
+
+LB1 3 1 5.929E-013 
+LB2 10 8 1.279E-012 
+LB3 14 7 1.737E-012 
+LB4 20 18 2.846E-012 
+LB5 25 23 3.286E-012 
+LB6 27 28 2.4E-012 
+LB7 35 33 1.996E-012 
+LB8 42 40 2.415E-012 
+
+L1 a 1 1.471E-012 
+L2 1 4 2.745E-012 
+L3 6 7 3.693E-012 
+L4 b 8 1.476E-012 
+L5 8 11 2.749E-012 
+L6 7 13 3.671E-012 
+L7 15 16 5.95E-012 
+L8 clk 18 1.58E-012 
+L9 18 21 1.818E-012 
+L10 21 22 1.634E-012 
+L11 16 23 4.569E-012 
+L12 23 26 3.384E-012 
+L13 27 29 1.168E-012 
+L14 31 27 3.042E-012 
+L15 21 33 2.198E-012 
+L16 33 36 4.555E-012 
+L17 36 32 2.964E-012 
+L18 38 30 8.576E-013 
+L19 30 40 3.531E-012 
+L20 40 q 1.583E-012 
+
+LP1 2 0 4.616E-013 
+LP2 5 0 4.744E-013 
+LP4 9 0 3.882E-013 
+LP5 12 0 3.984E-013 
+LP8 17 0 4.778E-013 
+LP9 19 0 3.834E-013 
+LP11 24 0 4.104E-013 
+LP15 34 0 5.341E-013 
+LP16 37 0 3.884E-013 
+LP18 39 0 4.944E-013 
+LP19 41 0 3.606E-013 
+
+RB1 1 101 RB1  
+LRB1 101 0 LRB1 
+RB2 4 104 RB2  
+LRB2 104 0 LRB2 
+RB3 4 106 RB3  
+LRB3 106 6 LRB3 
+RB4 8 108 RB4  
+LRB4 108 0 LRB4 
+RB5 11 111 RB5  
+LRB5 111 0 LRB5 
+RB6 11 113 RB6  
+LRB6 113 13 LRB6 
+RB7 7 115 RB7  
+LRB7 115 15 LRB7 
+RB8 16 116 RB8  
+LRB8 116 0 LRB8 
+RB9 18 118 RB9  
+LRB9 118 0 LRB9 
+RB10 22 122 RB10  
+LRB10 122 16 LRB10 
+RB11 23 123 RB11  
+LRB11 123 0 LRB11 
+RB12 26 126 RB12  
+LRB12 126 27 LRB12 
+RB13 29 129 RB13  
+LRB13 129 30 LRB13 
+RB14 32 131 RB14  
+LRB14 131 31 LRB14 
+RB15 33 133 RB15  
+LRB15 133 0 LRB15 
+RB16 36 136 RB16  
+LRB16 136 0 LRB16 
+RB17 32 138 RB17  
+LRB17 138 38 LRB17 
+RB18 30 130 RB18  
+LRB18 130 0 LRB18 
+RB19 40 140 RB19  
+LRB19 140 0 LRB19 
+
+.ends

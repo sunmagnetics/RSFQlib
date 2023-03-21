@@ -1,0 +1,48 @@
+* Circuit for InductEx extraction (excluding resistors)
+* Author: L. Schindler
+* Version: 3.0
+* Last modification date: 7 August 2022
+* Last modification by: T. Hall
+.control
+	back-annotate THmitll_SFQDC_v3p0_base.cir
+.endc
+
+* Inductors
+L1 a 1 1.522p [L1]
+L2 1 4 0.827p [L2]
+L3 5 4 1.12884p [L3]
+L4 6 9 5.94p [L4]
+L5 4 10 1.11098p [L5]
+L6 9 11 3.216p [L6]
+L7 9 14 0.215p [L7]
+L8 15 17 0.954p [L8]
+L9 17 19 3.699p [L9]
+L10 19 21 2.010p [L10]
+L11 21 q 1.510p [L11]
+LR1 13 9 0.91p [LR1]
+LB1 3 1 [LB1]
+LB2 7 6 [LB2]
+LB3 16 15 [LB3]
+LB4 20 19 [LB4]
+LP1 2 0 [LP1]
+LP3 8 0 [LP3]
+LP5 12 0 [LP5]
+LP7 18 0 [LP7]
+LP8 22 0 [LP8]
+* Ports
+P1 a 0
+P2 q 0
+PR1 13 0
+PB1 3 0
+PB2 7 0
+PB3 16 0
+PB4 20 0
+J1 1 2 325u
+J2 5 6 150u
+J3 6 8 175u
+J4 10 11 200u
+J5 11 12 300u
+J6 14 15 150u
+J7 17 18 150u
+J8 21 22 200u
+.end
